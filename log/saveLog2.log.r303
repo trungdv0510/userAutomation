@@ -1,0 +1,12 @@
+2021-04-15 -- INFO       org.apache.http.impl.client.DefaultHttpClient - I/O exception (java.net.SocketException) caught when connecting to {}->http://192.168.137.1:8081: Software caused connection abort: connect
+2021-04-15 -- INFO       org.apache.http.impl.client.DefaultHttpClient - Retrying connect to {}->http://192.168.137.1:8081
+2021-04-15 -- INFO       org.apache.http.impl.client.DefaultHttpClient - I/O exception (java.net.SocketException) caught when connecting to {}->http://192.168.137.1:8081: Network is unreachable: connect
+2021-04-15 -- INFO       org.apache.http.impl.client.DefaultHttpClient - Retrying connect to {}->http://192.168.137.1:8081
+2021-04-15 -- INFO       org.apache.http.impl.client.DefaultHttpClient - I/O exception (java.net.SocketException) caught when connecting to {}->http://192.168.137.1:8081: Network is unreachable: connect
+2021-04-15 -- INFO       org.apache.http.impl.client.DefaultHttpClient - Retrying connect to {}->http://192.168.137.1:8081
+2021-04-15 -- INFO       org.apache.http.impl.client.DefaultHttpClient - I/O exception (java.net.NoRouteToHostException) caught when connecting to {}->http://192.168.137.1:8081: No route to host: connect
+2021-04-15 -- INFO       org.apache.http.impl.client.DefaultHttpClient - Retrying connect to {}->http://192.168.137.1:8081
+2021-04-15 -- INFO       org.apache.http.impl.client.DefaultHttpClient - I/O exception (java.net.NoRouteToHostException) caught when connecting to {}->http://192.168.137.1:8081: No route to host: connect
+2021-04-15 -- INFO       org.apache.http.impl.client.DefaultHttpClient - Retrying connect to {}->http://192.168.137.1:8081
+2021-04-15 -- INFO       org.apache.http.impl.client.DefaultHttpClient - I/O exception (java.net.NoRouteToHostException) caught when connecting to {}->http://192.168.137.1:8081: No route to host: connect
+2021-04-15 -- INFO       org.apache.http.impl.client.DefaultHttpClient - Retrying connect to {}->http://192.168.137.1:8081

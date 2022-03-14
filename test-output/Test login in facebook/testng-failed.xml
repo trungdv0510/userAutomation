@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Test login in facebook]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <parameter name="bareURL" value="https://www.facebook.com/"/>
+    <parameter name="exelData" value="login.xlsx&gt;data&gt;facebook"/>
+    <classes>
+      <class name="Flows.LoginFacebook">
+        <methods>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+          <include name="BeforeSuite"/>
+          <include name="testForLoginPage" invocation-numbers="0 1"/>
+        </methods>
+      </class> <!-- Flows.LoginFacebook -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Test login in facebook] -->

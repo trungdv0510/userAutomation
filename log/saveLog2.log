@@ -1,0 +1,23 @@
+2021-06-18 -- INFO       org.apache.http.impl.client.DefaultHttpClient - Retrying connect to {}->http://autor.testertoday.com:9999
+2021-06-18 -- INFO       org.apache.http.impl.client.DefaultHttpClient - I/O exception (java.net.NoRouteToHostException) caught when connecting to {}->http://autor.testertoday.com:9999: No route to host: connect
+2021-06-18 -- INFO       org.apache.http.impl.client.DefaultHttpClient - Retrying connect to {}->http://autor.testertoday.com:9999
+2021-06-18 -- INFO       org.apache.http.impl.client.DefaultHttpClient - I/O exception (java.net.NoRouteToHostException) caught when connecting to {}->http://autor.testertoday.com:9999: No route to host: connect
+2021-06-18 -- INFO       org.apache.http.impl.client.DefaultHttpClient - Retrying connect to {}->http://autor.testertoday.com:9999
+2021-06-18 -- INFO       org.apache.http.impl.client.DefaultHttpClient - I/O exception (java.net.NoRouteToHostException) caught when connecting to {}->http://autor.testertoday.com:9999: No route to host: connect
+2021-06-18 -- INFO       org.apache.http.impl.client.DefaultHttpClient - Retrying connect to {}->http://autor.testertoday.com:9999
+2021-06-18 -- INFO       org.apache.http.impl.client.DefaultHttpClient - I/O exception (java.net.NoRouteToHostException) caught when connecting to {}->http://autor.testertoday.com:9999: No route to host: connect
+2021-06-18 -- INFO       org.apache.http.impl.client.DefaultHttpClient - Retrying connect to {}->http://autor.testertoday.com:9999
+2021-07-09 -- INFO       org.apache.http.impl.client.DefaultHttpClient - I/O exception (java.net.SocketException) caught when connecting to {}->http://testervn.local:9999: Software caused connection abort: connect
+2021-07-09 -- INFO       org.apache.http.impl.client.DefaultHttpClient - Retrying connect to {}->http://testervn.local:9999
+2021-07-09 -- INFO       org.apache.http.impl.client.DefaultHttpClient - I/O exception (java.net.NoRouteToHostException) caught when connecting to {}->http://testervn.local:9999: No route to host: connect
+2021-07-09 -- INFO       org.apache.http.impl.client.DefaultHttpClient - Retrying connect to {}->http://testervn.local:9999
+2021-07-09 -- INFO       org.apache.http.impl.client.DefaultHttpClient - I/O exception (java.net.NoRouteToHostException) caught when connecting to {}->http://testervn.local:9999: No route to host: connect
+2021-07-09 -- INFO       org.apache.http.impl.client.DefaultHttpClient - Retrying connect to {}->http://testervn.local:9999
+2021-10-15 -- INFO       org.apache.http.impl.client.DefaultHttpClient - I/O exception (java.net.SocketException) caught when connecting to {}->http://areport.testertoday.com:80: Permission denied: connect
+2021-10-15 -- INFO       org.apache.http.impl.client.DefaultHttpClient - Retrying connect to {}->http://areport.testertoday.com:80
+2021-12-10 -- INFO       org.apache.http.impl.client.DefaultHttpClient - I/O exception (java.net.SocketException) caught when connecting to {}->http://testertoday.com:80: Permission denied: connect
+2021-12-10 -- INFO       org.apache.http.impl.client.DefaultHttpClient - Retrying connect to {}->http://testertoday.com:80
+2021-12-10 -- INFO       org.apache.http.impl.client.DefaultHttpClient - I/O exception (java.net.SocketException) caught when connecting to {}->http://testertoday.com:80: Permission denied: connect
+2021-12-10 -- INFO       org.apache.http.impl.client.DefaultHttpClient - Retrying connect to {}->http://testertoday.com:80
+2021-12-10 -- INFO       org.apache.http.impl.client.DefaultHttpClient - I/O exception (java.net.SocketException) caught when connecting to {}->http://testertoday.com:80: Permission denied: connect
+2021-12-10 -- INFO       org.apache.http.impl.client.DefaultHttpClient - Retrying connect to {}->http://testertoday.com:80
