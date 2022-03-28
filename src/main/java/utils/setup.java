@@ -4,6 +4,7 @@ import java.io.File;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
@@ -49,10 +50,14 @@ public class setup {
 	public static UUID TestUUID;
 	public static UUID StepUUID;
 	public static String pathVideoMp4;
+	private static HashMap<String, String> testSuiteAPI;
+	private static HashMap<String, String> testCaseAPI;
+	private static List<HashMap<String, String>>  testLogsAPI;
 	
 	@Parameters({ "testname" })
 	@BeforeMethod
 	public void beforeMethod(ITestContext ctx, Method method, String testname) {
+		testCaseAPI = new HashMap<String, String>();
 		System.err.println("BeforeMethod");
 		TestUUID = UUID.randomUUID();
 		System.err.println("BeforeMethod");
