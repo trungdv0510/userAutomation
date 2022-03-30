@@ -4,6 +4,7 @@ import java.io.File;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
@@ -49,16 +50,24 @@ public class setup {
 	public static UUID TestUUID;
 	public static UUID StepUUID;
 	public static String pathVideoMp4;
-	
+	public static ITestContext ctxLocal;
+	/*
+	 * Method -> lấy tên các method run trong class
+	 */
+	public static Method methodLocal;
+	public static String testnameLocal;
+	public static String running;
 	@Parameters({ "testname" })
 	@BeforeMethod
 	public void beforeMethod(ITestContext ctx, Method method, String testname) {
 		System.err.println("BeforeMethod");
-		TestUUID = UUID.randomUUID();
-		System.err.println("BeforeMethod");
 		System.out.println("TestUUID" + TestUUID);
 		testLogs = extent.startTest(testname+ ": " +this.getClass().getName(), "đang test cho method: " + method.getName());
 		testLogs.assignCategory(ctx.getCurrentXmlTest().getSuite().getName());
+		
+		ctxLocal = ctx;
+		methodLocal = method;
+		testnameLocal = testname;
 
 	}
 
@@ -100,6 +109,7 @@ public class setup {
 	public void beforeTest(ITestContext ctx, String type, String bareURL, String chrome, String deviceName, String udid,
 			String platformName, String platformVersion, String appPackage, String appActivity) {
 		System.err.println("BeforeTest");
+		TestUUID = UUID.randomUUID();
 		try {
 			if (type.contains("web")) {
 				if (chrome.contains("chrome")) {
@@ -164,22 +174,11 @@ public class setup {
 
 	}
 
-	/*
-	  @BeforeClass 
-	  public void beforeClass(ITestContext ctx, ITestResult result) throws Exception { 
-		 System.err.println("BeforeClass"); pathVideoSave = randomName.pathVideo(ctx.getClass().getName());
-		 ScreenshotAndVideo.startRecord(pathVideoSave); 
-	  }
-	  
-	 @AfterClass 
-	 public void afterClass() throws Exception {
-		 System.err.println("@AfterClass");
-		 ScreenshotAndVideo.stopRecord(); 
-		 }
-	 */
+
 	@BeforeSuite
 	public void BeforeSuite(ITestContext itest) {
 		System.err.println("BeforeSuite");
+		SuiteUUID = UUID.randomUUID();
 		suiteName = itest.getCurrentXmlTest().getSuite().getName();
 		extent = null;
 		System.out.println("Suite name " + suiteName);

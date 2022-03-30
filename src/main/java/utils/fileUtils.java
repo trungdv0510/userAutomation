@@ -19,4 +19,14 @@ public class fileUtils {
 		}
 		return true;
 	}
+	
+	public static File getFileFromPath(String path) {
+		try {
+			return new File(path);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.err.println("Can't find path "+path);
+		}
+		return null;
+	}
 }
