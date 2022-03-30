@@ -8,8 +8,8 @@ public class dataAPI {
 			String methodPass, String methodFail){
 		HashMap<String, String> testsuite = new HashMap<String, String>();
 		try {
-			testsuite.put(tableDB.testSuite.UUID.toString(), UUID);
-			testsuite.put(tableDB.testSuite.SuiteName.toString(), dateRun);
+			testsuite.put(tableDB.testSuite.uuid.toString(), UUID);
+			testsuite.put(tableDB.testSuite.suiteName.toString(), dateRun);
 			testsuite.put(tableDB.testSuite.dateRun.toString(), methodFail);
 			testsuite.put(tableDB.testSuite.runTime.toString(), runTime);
 			testsuite.put(tableDB.testSuite.testcasePass.toString(), testcasePass);
@@ -26,7 +26,7 @@ public class dataAPI {
 			String author, String suiteUUID, String startTime, String endTime, String timeDuration){
 		HashMap<String, String> testcase = new HashMap<String, String>();
 		try {
-			testcase.put(tableDB.testcase.UUID.toString(), UUID);
+			testcase.put(tableDB.testcase.uuid.toString(), UUID);
 			testcase.put(tableDB.testcase.testName.toString(), testName);
 			testcase.put(tableDB.testcase.methodName.toString(), methodName);
 			testcase.put(tableDB.testcase.author.toString(), author);
@@ -45,8 +45,8 @@ public class dataAPI {
 			String videoPath){
 		HashMap<String, String> testlog = new HashMap<String, String>();
 		try {
-			testlog.put(tableDB.testlog.UUID.toString(), UUID);
-			testlog.put(tableDB.testlog.testcaseUUID.toString(), testcaseUUID);
+			testlog.put(tableDB.testlog.uuid.toString(), UUID);
+			testlog.put(tableDB.testlog.testcaseuuid.toString(), testcaseUUID);
 			testlog.put(tableDB.testlog.stepName.toString(), stepName);
 			testlog.put(tableDB.testlog.detail.toString(), detail);
 			testlog.put(tableDB.testlog.testLogTime.toString(), testLogTime);
