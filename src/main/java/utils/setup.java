@@ -2,7 +2,10 @@ package utils;
 
 import java.io.File;
 import java.lang.reflect.Method;
+import java.net.InetAddress;
 import java.net.URL;
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
@@ -32,6 +35,8 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import API.MapHashMap;
+import API.tableDB;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -51,20 +56,28 @@ public class setup {
 	public static UUID StepUUID;
 	public static String pathVideoMp4;
 	public static ITestContext ctxLocal;
+	public static ITestResult resultLocal;
+	public static int totalPass = 0, totalFail = 0, testlogSum = 0 , runTime = 0;
+	public static HashMap<String, String> testSuiteAPI;
+	public static HashMap<String, String> testCaseAPI;
+	public static HashMap<String, String> testLogAPI;
+	public static List<HashMap<String, String>> listTestLog;
+	public static List<HashMap<String, String>> listTestCase;
 	/*
 	 * Method -> lấy tên các method run trong class
 	 */
 	public static Method methodLocal;
 	public static String testnameLocal;
 	public static String running;
+
 	@Parameters({ "testname" })
 	@BeforeMethod
 	public void beforeMethod(ITestContext ctx, Method method, String testname) {
-		System.err.println("BeforeMethod");
 		System.out.println("TestUUID" + TestUUID);
-		testLogs = extent.startTest(testname+ ": " +this.getClass().getName(), "đang test cho method: " + method.getName());
+		testLogs = extent.startTest(testname + ": " + this.getClass().getName(),
+				"đang test cho method: " + method.getName());
 		testLogs.assignCategory(ctx.getCurrentXmlTest().getSuite().getName());
-		
+
 		ctxLocal = ctx;
 		methodLocal = method;
 		testnameLocal = testname;
@@ -74,33 +87,53 @@ public class setup {
 	@Parameters({ "type" })
 	@AfterMethod
 	public void afterMethod(ITestContext ctx, ITestResult result, String type) {
-		System.err.println("AfterMethod");
-		System.out.println(ctx.getClass().getName() + "<--->" + this.getClass().getName());
-		pathfileIMGSave = randomName.pathImg(this.getClass().getName());
-		String imgPath = "";
-		if (type.contains("web")) {
-			try {
-				imgPath = ScreenshotAndVideo.screenShotBySelenium(driver, pathfileIMGSave);
-			} catch (Exception e) {
-				// TODO: handle exception
-				System.out.println("CaptureScreen by selenium error");
+		try {
+			resultLocal = result;
+			System.err.println("AfterMethod");
+			System.out.println(ctx.getClass().getName() + "<--->" + this.getClass().getName());
+			pathfileIMGSave = randomName.pathImg(this.getClass().getName());
+			String imgPath = "";
+			if (type.contains("web")) {
 				try {
-					imgPath = ScreenshotAndVideo.screenShotByJava(pathfileIMGSave);
-				} catch (Exception e2) {
+					imgPath = ScreenshotAndVideo.screenShotBySelenium(driver, pathfileIMGSave);
+				} catch (Exception e) {
 					// TODO: handle exception
-					System.out.println("CaptureScreen by java error");
+					System.out.println("CaptureScreen by selenium error");
+					try {
+						imgPath = ScreenshotAndVideo.screenShotByJava(pathfileIMGSave);
+					} catch (Exception e2) {
+						// TODO: handle exception
+						System.out.println("CaptureScreen by java error");
+					}
 				}
+			} else {
+				imgPath = ScreenshotAndVideo.screenShotByJava(pathfileIMGSave);
 			}
-		} else {
-			imgPath = ScreenshotAndVideo.screenShotByJava(pathfileIMGSave);
+			System.out.println(imgPath);
+			File imgFile = new File(contains.folderReprotLocation + imgPath);
+			if (imgFile.exists() && !imgFile.isDirectory()) {
+				testLogs.log(LogStatus.INFO, testLogs.addScreenCapture(imgPath), "");
+			}
+			// Lấy thông số của bài test sau khi đã chạy xong
+			String TestcaseAuthor = ctx.getCurrentXmlTest().getParameter("author");
+			String TestcaseName = ctx.getCurrentXmlTest().getName();
+			String TestcaseDescription = "đang test cho method: " + result.getMethod().getMethodName();
+			String TestcaseStartTime = contains.timeDateReport(testLogs.getTest().getStartedTime());
+			String TestcaseEndTime = contains.timeDateReport(testLogs.getTest().getEndedTime());
+			String TestcaseDuration = testLogs.getTest().getRunDuration();
+			String TestcaseStatus = testLogs.getTest().getStatus().toString();
+			if (result.getStatus() == ITestResult.FAILURE || result.getStatus() == ITestResult.SKIP) {
+				totalFail++;
+			}
+			else {
+				totalPass++;
+			}
+			
+			extent.endTest(testLogs);
+			extent.flush();
+		} catch (Exception e) {
+			// TODO: handle exception
 		}
-		System.out.println(imgPath);
-		File imgFile = new File(contains.folderReprotLocation+imgPath);
-		if(imgFile.exists() && !imgFile.isDirectory()) {
-			testLogs.log(LogStatus.INFO, testLogs.addScreenCapture(imgPath),"");
-		}
-		extent.endTest(testLogs);
-		extent.flush();
 	}
 
 	@Parameters({ "type", "bareURL", "chrome", "deviceName", "udid", "platformName", "platformVersion", "appPackage",
@@ -157,10 +190,10 @@ public class setup {
 			System.err.println("Stop video");
 			String pathVideoAvi = randomName.pathVideoAvi(videoName);
 			ScreenshotAndVideo.stopRecord();
-			//convert video to mp4
+			// convert video to mp4
 			convert.AviToMp4(pathVideoAvi, pathVideoMp4);
-			//xóa video đuôi AVI
-			if (fileUtils.deleteIfExists(contains.folderReprotLocation +pathVideoAvi)) {
+			// xóa video đuôi AVI
+			if (fileUtils.deleteIfExists(contains.folderReprotLocation + pathVideoAvi)) {
 				System.out.println("Delete file success");
 			}
 			if (type.contains("web")) {
@@ -173,7 +206,6 @@ public class setup {
 		}
 
 	}
-
 
 	@BeforeSuite
 	public void BeforeSuite(ITestContext itest) {
@@ -193,8 +225,27 @@ public class setup {
 
 	@AfterSuite
 	public void afterSuite(ITestContext itest) {
-		System.err.println("AfterSuite");
-		extent.close();
+		try {
+			// cấu hình cho testsuite
+			String suiteUUID = SuiteUUID.toString();
+			String SuiteName = ctxLocal.getCurrentXmlTest().getSuite().getName();
+			LocalDate date = LocalDate.now();
+			String dateRun = date.toString();
+			String runTimes = String.valueOf(runTime);
+			String testcasePass = String.valueOf(totalPass);
+			String testcaseFail = String.valueOf(totalFail);
+			String testLogSum = String.valueOf(testlogSum);
+			InetAddress ip = InetAddress.getLocalHost(); // Lấy IP
+			String TestcaseHostname = ip.getHostName();
+			String TestcaseIP = ip.getHostAddress();
+			testSuiteAPI = MapHashMap.testSuiteMap(suiteUUID, SuiteName, dateRun, runTimes, 
+					testcasePass, testcaseFail, testLogSum, TestcaseIP, TestcaseHostname);
+			System.err.println("AfterSuite");
+			extent.close();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
 	}
 
 	// config Chorme
