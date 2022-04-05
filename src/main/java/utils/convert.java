@@ -1,5 +1,8 @@
 package utils;
 import java.io.File;
+
+import org.python.antlr.PythonParser.return_stmt_return;
+
 import ws.schild.jave.AudioAttributes;
 import ws.schild.jave.Encoder;
 import ws.schild.jave.EncoderException;
@@ -43,4 +46,25 @@ public class convert {
 					e.printStackTrace();
 				}
 			}
+
+	/*
+	 * input: 0h 0m 35s+860ms 
+	 * output: 3000ms
+	 */
+	public static int convertTimeToInteger(String timmer) {
+		int time = 0;
+		try {
+			String[] timeList = timmer.split(" ");
+			int hours = Integer.parseInt(timeList[0].replace("h", ""));
+			int minues = Integer.parseInt(timeList[1].replace("m", ""));
+			String[] secondAndMilisecond = timeList[2].split("\\+");
+			int second = Integer.parseInt(secondAndMilisecond[0].replace("s", ""));
+			int milisecond = Integer.parseInt(secondAndMilisecond[1].replace("ms", ""));
+			time = milisecond + (second * 1000) + (minues * 60000) + (hours * 3600000);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.err.println(e.getMessage());
+		}
+		return time;
+	}
 }

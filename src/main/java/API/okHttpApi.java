@@ -34,21 +34,25 @@ public class okHttpApi {
 		}
 		return responseCheck;
 	}
-	public static String insertImg(String filePath, String url,MediaType mediaType) {
+
+	public static String insertImg(String filePath, String url, MediaType mediaType) {
 		String pathInServer = "";
 		try {
 			File fileUpload = fileUtils.getFileFromPath(filePath);
-			 RequestBody requestBody = new MultipartBody.Builder().setType(MultipartBody.FORM)
-		                .addFormDataPart("fileName", null, RequestBody.create(mediaType, fileUpload))
-		                .build();
+			String[] fileName = filePath.split("\\/");
+			System.out.println(fileName[fileName.length-1]);
+			if (fileUpload.exists() && fileUpload != null) {
+				RequestBody requestBody = new MultipartBody.Builder().setType(MultipartBody.FORM)
+						.addFormDataPart("fileName",fileName[fileName.length-1], RequestBody.create(mediaType, fileUpload)).build();
 
-		        Request request = new Request.Builder().url(url)
-		                .post(requestBody).build();
+				Request request = new Request.Builder().url(url).post(requestBody).build();
 
-		        Response response = client.newCall(request).execute();
-		        if (response.isSuccessful()) {
-		        	pathInServer = response.body().toString();
+				Response response = client.newCall(request).execute();
+				if (response.isSuccessful()) {
+					pathInServer = response.body().string().toString();
 				}
+			}
+			System.out.println(pathInServer);
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.err.println(e.getMessage());

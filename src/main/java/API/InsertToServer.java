@@ -5,49 +5,85 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.UUID;
 
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 
+import utils.contains;
+import utils.convert;
 import utils.setup;
 
 public class InsertToServer extends setup{
-	public static String pattern = "yyyy-MM-dd HH:mm:ss";
-	public static SimpleDateFormat formatDate = new SimpleDateFormat(pattern);
-	public static String patternMilliS = "SSSS";
-	public static SimpleDateFormat formatMillisecond = new SimpleDateFormat(
-			patternMilliS);
-	public static SimpleDateFormat formateTimeStamp = new SimpleDateFormat(
-			"HH:mm:ss");
-	// ------------------------
-	public static String timeDateReport(Date date) {
-		return formatDate.format(date);
-	}
-	public static boolean instetToHashMap(ITestResult Iresult,ITestContext ctx, UUID testSuite, UUID testcase,UUID testLog, String imgPath, String videoPath) {
-		boolean result = false;
+	public static HashMap<String, String> testSuiteAPI;
+	public static HashMap<String, String> testCaseAPI;
+	public static HashMap<String, String> testLogAPI;
+	public static List<HashMap<String, String>> listTestLog;
+	public static List<HashMap<String, String>> listTestCase;
+	public static void testSuite() {
 		try {
-			
-			String SuiteName = ctx.getCurrentXmlTest().getSuite().getName();
-			String TestcaseName = ctx.getCurrentXmlTest().getName();
-			String TestcaseDescription = "đang test cho method: "
-					+ Iresult.getMethod().getMethodName();
-			String TestcaseStartTime = timeDateReport(testLogs
-					.getTest().getStartedTime());
-			String TestcaseEndTime = timeDateReport(testLogs
-					.getTest().getEndedTime());
-			String TestcaseDuration = testLogs.getTest().getRunDuration();
-			String TestcaseStatus = testLogs.getTest().getStatus().toString();
-			// String TestcaseAuthor =
-			// testLogs.getTest().getAuthorsList().get(0).getName();
-			String TestcaseAuthor = ctx.getCurrentXmlTest().getParameter("author");
+			String suiteUUID = SuiteUUID.toString();
+			String SuiteName = ctxLocal.getCurrentXmlTest().getSuite().getName();
+			LocalDate date = LocalDate.now();
+			String dateRun = date.toString();
+			String runTimes = String.valueOf(runTime);
+			String testcasePass = String.valueOf(totalPass);
+			String testcaseFail = String.valueOf(totalFail);
+			String testLogSum = String.valueOf(testlogSum);
 			InetAddress ip = InetAddress.getLocalHost(); // Lấy IP
 			String TestcaseHostname = ip.getHostName();
 			String TestcaseIP = ip.getHostAddress();
+			String result = contains.pass;
+			if (totalFail>0) {
+				result = contains.fail;
+			}
+			testSuiteAPI = MapHashMap.testSuiteMap(suiteUUID, SuiteName, dateRun, runTimes, 
+					testcasePass, testcaseFail, testLogSum, TestcaseIP, TestcaseHostname,result);
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println(e.getMessage());
 		}
-		return result;
+	}
+	
+	public static void testcase(ITestContext ctx, ITestResult result) {
+		try {
+			String TestcaseName = ctx.getCurrentXmlTest().getName();
+			String methodName = result.getMethod().getMethodName();
+			String TestcaseAuthor = ctx.getCurrentXmlTest().getParameter("author");
+			String TestcaseStartTime = contains.timeDateReport(testLogs.getTest().getStartedTime());
+			String TestcaseEndTime = contains.timeDateReport(testLogs.getTest().getEndedTime());
+			String TestcaseDuration = testLogs.getTest().getRunDuration();
+			String TestcaseStatus = testLogs.getTest().getStatus().toString();
+			if (result.getStatus() == ITestResult.FAILURE || result.getStatus() == ITestResult.SKIP) {
+				totalFail++;
+			}
+			else {
+				totalPass++;
+			}
+			runTime += convert.convertTimeToInteger(TestcaseDuration);
+			testCaseAPI =MapHashMap.testCaseMap(TestUUID.toString(), TestcaseName, methodName, 
+					TestcaseAuthor, SuiteUUID.toString(), TestcaseStartTime, TestcaseEndTime, 
+					TestcaseDuration, TestcaseStatus);
+			listTestCase.add(testCaseAPI);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.err.println(e.getMessage());
+		}
+	}
+	public static void testLog() {
+		for (int i = 0; i <  testLogs.getTest().getLogList().size(); i++) {
+			String uuid = UUID.randomUUID().toString();
+			String testcaseUUID = TestUUID.toString();
+			String stepName = testLogs.getTest().getLogList().get(i).getStepName();
+			String details = testLogs.getTest().getLogList().get(i).getDetails();
+			if(stepName.contains("<img")) {
+				stepName = stepName.replaceAll("<img", "<img width='60%'");
+				stepName = stepName.replaceAll("data-featherlight", "target='_blank' data-featherlight");
+			}
+			String TestStepTime =contains.timeDateReport(testLogs.getTest().getLogList().get(i).getTimestamp());
+			String TestStepStatus = testLogs.getTest().getLogList().get(i).getLogStatus().toString();
+			MapHashMap.testLogMap(uuid, testcaseUUID, stepName, details, stepName, details, TestStepTime, TestStepStatus);
+		}
 	}
 }

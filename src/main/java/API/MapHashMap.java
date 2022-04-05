@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class MapHashMap {
 	public static HashMap<String, String> testSuiteMap(String uuid,String suiteName,
 			String dateRun,String runTime,String testcasePass,String testcaseFail,String testlogSum,
-			String IpName,String hostName){
+			String IpName,String hostName, String result){
 		HashMap<String, String> testSuite = new HashMap<String, String>();
 		try {
 			testSuite.put(tableDB.testSuite.uuid.toString(), uuid);
@@ -17,6 +17,7 @@ public class MapHashMap {
 			testSuite.put(tableDB.testSuite.testlogSum.toString(), testlogSum);
 			testSuite.put(tableDB.testSuite.IpName.toString(), IpName);
 			testSuite.put(tableDB.testSuite.hostName.toString(), hostName);
+			testSuite.put(tableDB.testSuite.result.toString(), result);
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.err.println(e.getMessage());
@@ -25,7 +26,7 @@ public class MapHashMap {
 	}
 	
 	public static HashMap<String, String> testCaseMap(String uuid,String testName,String methodName,String author,
-			String suiteUUID,String startTime,String endTime,String timeDuration){
+			String suiteUUID,String startTime,String endTime,String timeDuration, String result){
 		HashMap<String, String> testCase = new HashMap<String, String>();
 		try {
 			testCase.put(tableDB.testcase.uuid.toString(), uuid);
@@ -36,6 +37,7 @@ public class MapHashMap {
 			testCase.put(tableDB.testcase.startTime.toString(), startTime);
 			testCase.put(tableDB.testcase.endTime.toString(), endTime);
 			testCase.put(tableDB.testcase.timeDuration.toString(), timeDuration);
+			testCase.put(tableDB.testcase.result.toString(), result);
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.err.println(e.getMessage());
@@ -44,20 +46,21 @@ public class MapHashMap {
 	}
 	
 	public static HashMap<String, String> testLogMap(String uuid,String testcaseuuid,String stepName,String detail,
-			String testLogTime,String imgPath,String videoPath){
-		HashMap<String, String> testCase = new HashMap<String, String>();
+			String testLogTime,String imgPath,String videoPath, String result){
+		HashMap<String, String> testLog = new HashMap<String, String>();
 		try {
-			testCase.put(tableDB.testlog.uuid.toString(), uuid);
-			testCase.put(tableDB.testlog.testcaseuuid.toString(), testcaseuuid);
-			testCase.put(tableDB.testlog.stepName.toString(), stepName);
-			testCase.put(tableDB.testlog.detail.toString(), detail);
-			testCase.put(tableDB.testlog.testLogTime.toString(), testLogTime);
-			testCase.put(tableDB.testlog.imgPath.toString(), imgPath);
-			testCase.put(tableDB.testlog.videoPath.toString(), videoPath);
+			testLog.put(tableDB.testlog.uuid.toString(), uuid);
+			testLog.put(tableDB.testlog.testcaseuuid.toString(), testcaseuuid);
+			testLog.put(tableDB.testlog.stepName.toString(), stepName);
+			testLog.put(tableDB.testlog.detail.toString(), detail);
+			testLog.put(tableDB.testlog.testLogTime.toString(), testLogTime);
+			testLog.put(tableDB.testlog.imgPath.toString(), imgPath);
+			testLog.put(tableDB.testlog.videoPath.toString(), videoPath);
+			testLog.put(tableDB.testlog.result.toString(), result);
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.err.println(e.getMessage());
 		}
-		return testCase;
+		return testLog;
 	}
 }

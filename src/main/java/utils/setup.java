@@ -35,7 +35,9 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import API.InsertToServer;
 import API.MapHashMap;
+import API.okHttpApi;
 import API.tableDB;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -53,16 +55,10 @@ public class setup {
 	public static String pathfileIMGSave;
 	public static UUID SuiteUUID;
 	public static UUID TestUUID;
-	public static UUID StepUUID;
 	public static String pathVideoMp4;
 	public static ITestContext ctxLocal;
 	public static ITestResult resultLocal;
-	public static int totalPass = 0, totalFail = 0, testlogSum = 0 , runTime = 0;
-	public static HashMap<String, String> testSuiteAPI;
-	public static HashMap<String, String> testCaseAPI;
-	public static HashMap<String, String> testLogAPI;
-	public static List<HashMap<String, String>> listTestLog;
-	public static List<HashMap<String, String>> listTestCase;
+	public static int totalPass = 0, totalFail = 0, testlogSum = 0, runTime = 0;
 	/*
 	 * Method -> lấy tên các method run trong class
 	 */
@@ -73,14 +69,23 @@ public class setup {
 	@Parameters({ "testname" })
 	@BeforeMethod
 	public void beforeMethod(ITestContext ctx, Method method, String testname) {
-		System.out.println("TestUUID" + TestUUID);
-		testLogs = extent.startTest(testname + ": " + this.getClass().getName(),
-				"đang test cho method: " + method.getName());
-		testLogs.assignCategory(ctx.getCurrentXmlTest().getSuite().getName());
+		try {
+			System.out.println("TestUUID" + TestUUID);
+			testLogs = extent.startTest(testname + ": " + this.getClass().getName(),
+					"đang test cho method: " + method.getName());
+			testLogs.assignCategory(ctx.getCurrentXmlTest().getSuite().getName());
 
-		ctxLocal = ctx;
-		methodLocal = method;
-		testnameLocal = testname;
+			ctxLocal = ctx;
+			methodLocal = method;
+			testnameLocal = testname;
+			System.err.println("Video screen");
+			videoName = randomName.VideoAvi(this.getClass().getName());
+			pathVideoMp4 = randomName.pathVideoMp4(this.getClass().getName());
+			ScreenshotAndVideo.startRecord(videoName);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.err.println(e.getMessage());
+		}
 
 	}
 
@@ -114,25 +119,29 @@ public class setup {
 			if (imgFile.exists() && !imgFile.isDirectory()) {
 				testLogs.log(LogStatus.INFO, testLogs.addScreenCapture(imgPath), "");
 			}
-			// Lấy thông số của bài test sau khi đã chạy xong
-			String TestcaseAuthor = ctx.getCurrentXmlTest().getParameter("author");
-			String TestcaseName = ctx.getCurrentXmlTest().getName();
-			String TestcaseDescription = "đang test cho method: " + result.getMethod().getMethodName();
-			String TestcaseStartTime = contains.timeDateReport(testLogs.getTest().getStartedTime());
-			String TestcaseEndTime = contains.timeDateReport(testLogs.getTest().getEndedTime());
-			String TestcaseDuration = testLogs.getTest().getRunDuration();
-			String TestcaseStatus = testLogs.getTest().getStatus().toString();
-			if (result.getStatus() == ITestResult.FAILURE || result.getStatus() == ITestResult.SKIP) {
-				totalFail++;
+			// Stop video
+			System.err.println("Stop video");
+			String pathVideoAvi = randomName.pathVideoAvi(videoName);
+			ScreenshotAndVideo.stopRecord();
+			// convert video to mp4
+			convert.AviToMp4(pathVideoAvi, pathVideoMp4);
+			// xóa video đuôi AVI
+			if (fileUtils.deleteIfExists(contains.folderReprotLocation + pathVideoAvi)) {
+				System.out.println("Delete file success");
 			}
-			else {
-				totalPass++;
-			}
-			
 			extent.endTest(testLogs);
 			extent.flush();
+			//insert video and picture to server
+			String pathImgFromServer =  okHttpApi.insertImg(contains.folderReprotLocation+imgPath, contains.url+contains.ApiImg, contains.MEDIA_TYPE_JPG);
+			String pathVideoFromServer = okHttpApi.insertImg(contains.folderReprotLocation+pathVideoMp4, contains.url+contains.ApiVideo, contains.MEDIA_TYPE_VIDEO);
+			testLogs.log(LogStatus.INFO, pathImgFromServer,"image");
+			testLogs.log(LogStatus.INFO, pathVideoFromServer,"video");
+			// Lấy thông số của bài test sau khi đã chạy xong
+			InsertToServer.testcase(ctx, result);
+			System.out.println(runTime);
 		} catch (Exception e) {
 			// TODO: handle exception
+			System.err.println(e.getMessage());
 		}
 	}
 
@@ -169,10 +178,6 @@ public class setup {
 			} else if (type.contains("sikuli")) {
 				screen = new Screen();
 			}
-			System.err.println("Video screen");
-			videoName = randomName.VideoAvi(this.getClass().getName());
-			pathVideoMp4 = randomName.pathVideoMp4(this.getClass().getName());
-			ScreenshotAndVideo.startRecord(videoName);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -186,16 +191,6 @@ public class setup {
 	public void afterTest(String type) {
 		try {
 			System.err.println("AfterTest");
-			// tắt những bài test chạy bằng Web
-			System.err.println("Stop video");
-			String pathVideoAvi = randomName.pathVideoAvi(videoName);
-			ScreenshotAndVideo.stopRecord();
-			// convert video to mp4
-			convert.AviToMp4(pathVideoAvi, pathVideoMp4);
-			// xóa video đuôi AVI
-			if (fileUtils.deleteIfExists(contains.folderReprotLocation + pathVideoAvi)) {
-				System.out.println("Delete file success");
-			}
 			if (type.contains("web")) {
 				if (driver != null) {
 					driver.quit();
@@ -227,21 +222,9 @@ public class setup {
 	public void afterSuite(ITestContext itest) {
 		try {
 			// cấu hình cho testsuite
-			String suiteUUID = SuiteUUID.toString();
-			String SuiteName = ctxLocal.getCurrentXmlTest().getSuite().getName();
-			LocalDate date = LocalDate.now();
-			String dateRun = date.toString();
-			String runTimes = String.valueOf(runTime);
-			String testcasePass = String.valueOf(totalPass);
-			String testcaseFail = String.valueOf(totalFail);
-			String testLogSum = String.valueOf(testlogSum);
-			InetAddress ip = InetAddress.getLocalHost(); // Lấy IP
-			String TestcaseHostname = ip.getHostName();
-			String TestcaseIP = ip.getHostAddress();
-			testSuiteAPI = MapHashMap.testSuiteMap(suiteUUID, SuiteName, dateRun, runTimes, 
-					testcasePass, testcaseFail, testLogSum, TestcaseIP, TestcaseHostname);
-			System.err.println("AfterSuite");
+			InsertToServer.testSuite();
 			extent.close();
+			System.err.println("AfterSuite");
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
