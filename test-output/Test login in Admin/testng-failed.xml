@@ -6,6 +6,7 @@
     <parameter name="appActivity" value="com.easybrain.sudoku.gui.splash.SplashActivity"/>
     <parameter name="bareURL" value="https://animehay.club/"/>
     <parameter name="chrome" value="chrome"/>
+    <parameter name="author" value="Trung dv"/>
     <parameter name="platformVersion" value="10"/>
     <parameter name="exelData" value="regrester.xlsx&gt;data&gt;regrester"/>
     <parameter name="type" value="web"/>

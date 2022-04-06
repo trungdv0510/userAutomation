@@ -29,7 +29,8 @@ public class contains {
 	public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
 	public static final MediaType MEDIA_TYPE_JPG = MediaType.parse("image/jpeg");
 	public static final MediaType MEDIA_TYPE_VIDEO = MediaType.parse("video/mp4");
-
+	// kiểm tra xem có sendtoserver hay ko 
+	public static int sendToServer = 0; // 1 -> send to server
 	// Current time
 	public static String getCurrentDateTime(String format) {
 		SimpleDateFormat sdf = new SimpleDateFormat(format);

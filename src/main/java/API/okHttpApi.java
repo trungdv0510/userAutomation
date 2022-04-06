@@ -25,7 +25,8 @@ public class okHttpApi {
 			RequestBody body = RequestBody.create(contains.JSON, jsonTestSuite);
 			Request request = new Request.Builder().url(url).post(body).build();
 			Response response = client.newCall(request).execute();
-			if (response.body().equals("OK")) {
+			System.out.println("reponse is "+response.body().string());
+			if (response.isSuccessful()) {
 				responseCheck = true;
 			}
 		} catch (Exception e) {

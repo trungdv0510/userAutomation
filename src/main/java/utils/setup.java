@@ -70,6 +70,7 @@ public class setup {
 	@BeforeMethod
 	public void beforeMethod(ITestContext ctx, Method method, String testname) {
 		try {
+			TestUUID = UUID.randomUUID();
 			System.out.println("TestUUID" + TestUUID);
 			testLogs = extent.startTest(testname + ": " + this.getClass().getName(),
 					"đang test cho method: " + method.getName());
@@ -138,6 +139,8 @@ public class setup {
 			testLogs.log(LogStatus.INFO, pathVideoFromServer,"video");
 			// Lấy thông số của bài test sau khi đã chạy xong
 			InsertToServer.testcase(ctx, result);
+			// lấy thông tin bài log của method
+			InsertToServer.testLog();
 			System.out.println(runTime);
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -151,7 +154,6 @@ public class setup {
 	public void beforeTest(ITestContext ctx, String type, String bareURL, String chrome, String deviceName, String udid,
 			String platformName, String platformVersion, String appPackage, String appActivity) {
 		System.err.println("BeforeTest");
-		TestUUID = UUID.randomUUID();
 		try {
 			if (type.contains("web")) {
 				if (chrome.contains("chrome")) {
@@ -224,6 +226,10 @@ public class setup {
 			// cấu hình cho testsuite
 			InsertToServer.testSuite();
 			extent.close();
+			
+			InsertToServer.insertTestSuite();
+			InsertToServer.insertTestCase();
+			InsertToServer.insertTestLog();
 			System.err.println("AfterSuite");
 		} catch (Exception e) {
 			// TODO: handle exception

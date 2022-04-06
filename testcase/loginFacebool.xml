@@ -3,6 +3,7 @@
 <suite name="Test login in Admin">
 	<test thread-count="5" name="Test">
 		<parameter name="type" value="web" />
+		<parameter name="author" value="Trung dv" />
 		<parameter name="bareURL" value="https://animehay.club/" />
 		<parameter name="chrome" value="chrome" />
 		<parameter name="deviceName" value="0.0.0.0:4723" />
