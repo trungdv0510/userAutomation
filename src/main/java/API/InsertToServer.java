@@ -50,13 +50,24 @@ public class InsertToServer extends setup{
 	
 	public static void testcase(ITestContext ctx, ITestResult result) {
 		try {
-			String TestcaseName = ctx.getCurrentXmlTest().getName();
+			String TestcaseName = ctx.getCurrentXmlTest().getName()+" methods test: "+result.getMethod().getMethodName();
 			String methodName = result.getMethod().getMethodName();
 			String TestcaseAuthor = ctx.getCurrentXmlTest().getParameter("author");
 			String TestcaseStartTime = contains.timeDateReport(testLogs.getTest().getStartedTime());
 			String TestcaseEndTime = contains.timeDateReport(testLogs.getTest().getEndedTime());
 			String TestcaseDuration = testLogs.getTest().getRunDuration();
-			String TestcaseStatus = testLogs.getTest().getStatus().toString();
+			String TestcaseStatus = "";
+			System.out.println(testLogs.getTest().getStatus().toString());
+			System.out.println(result.getStatus());
+			if (result.getStatus() == ITestResult.FAILURE) {
+				TestcaseStatus = "error";
+			}
+			else if(result.getStatus() == ITestResult.FAILURE){
+				TestcaseStatus = "pass";
+			}
+			else{
+				TestcaseStatus = "skip";
+			}
 			if (result.getStatus() == ITestResult.FAILURE || result.getStatus() == ITestResult.SKIP) {
 				totalFail++;
 			}

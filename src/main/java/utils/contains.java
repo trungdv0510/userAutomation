@@ -17,14 +17,14 @@ public class contains {
 	public static String folderImgReport = "imgReport/";
 	public static String folderVideoReport = "videoReport/";
 	// cấu hình url cho insert API
-	public static String url = "http://127.0.0.1:8080/";
-	public static String ApiTestSuite = "api/testsuite/add";
-	public static String ApiTestCase = "api/testcase/add";
-	public static String ApiTestCases = "api/testcases/add";
-	public static String ApiTestLog = "api/testlog/add";
-	public static String ApiTestLogs = "api/testlogs/add";
-	public static String ApiImg = "api/testlog/post/img";
-	public static String ApiVideo = "api/testlog/post/video";
+	public static String url = "http://localhost:8085/";
+	public static String ApiTestSuite = "api/testsuite";
+	public static String ApiTestCase = "api/testcase";
+	public static String ApiTestCases = "api/testcases";
+	public static String ApiTestLog = "api/testlog";
+	public static String ApiTestLogs = "api/testlogs";
+	public static String ApiImg = "api/img";
+	public static String ApiVideo = "api/video";
 	// cấu hình cho API thư viện OKHttp
 	public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
 	public static final MediaType MEDIA_TYPE_JPG = MediaType.parse("image/jpeg");

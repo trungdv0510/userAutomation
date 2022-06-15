@@ -148,11 +148,9 @@ public class setup {
 		}
 	}
 
-	@Parameters({ "type", "bareURL", "chrome", "deviceName", "udid", "platformName", "platformVersion", "appPackage",
-			"appActivity" })
+	@Parameters({ "type", "bareURL", "chrome" })
 	@BeforeTest
-	public void beforeTest(ITestContext ctx, String type, String bareURL, String chrome, String deviceName, String udid,
-			String platformName, String platformVersion, String appPackage, String appActivity) {
+	public void beforeTest(ITestContext ctx, String type, String bareURL, String chrome) {
 		System.err.println("BeforeTest");
 		try {
 			if (type.contains("web")) {
@@ -174,6 +172,13 @@ public class setup {
 				driver.get(bareURL);
 
 			} else if (type.contains("app")) {
+				// lấy những thông tin khi chạy 
+				String deviceName =  ctx.getCurrentXmlTest().getParameter("deviceName");
+				String udid =  ctx.getCurrentXmlTest().getParameter("udid");
+				String platformName =  ctx.getCurrentXmlTest().getParameter("platformName");
+				String platformVersion =  ctx.getCurrentXmlTest().getParameter("platformVersion");
+				String appPackage =  ctx.getCurrentXmlTest().getParameter("appPackage");
+				String appActivity =  ctx.getCurrentXmlTest().getParameter("appActivity");
 				URL url = new URL("http://127.0.0.1:4723/wd/hub");
 				appiumDriver = new AppiumDriver<MobileElement>(url, configAppCapabilities(deviceName, udid,
 						platformName, platformVersion, appPackage, appActivity));

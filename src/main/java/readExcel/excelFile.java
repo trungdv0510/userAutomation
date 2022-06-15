@@ -135,25 +135,9 @@ public class excelFile {
 		
 	}
 	public static void setPass(int colPass, int row, int colFail) {
-		int i = colPass;
-		while (true) {
-			System.out.println(i +"---------"+getCellData(row, i));
-			if (!getCellData(row, i).contains(contains.pass) && !getCellData(row, i).contains(contains.fail)) {
-				setCellDataResult(i,row,contains.dataFolder+contains.fileExcelName,contains.pass);
-				break;
-			}
-			i++;
-		}
+		setCellDataResult(colPass,row,contains.dataFolder+contains.fileExcelName,contains.pass);
 	}
 	public static void setFail(int colPass, int row, int colFail) {
-		int i = colPass;
-		while (true) {
-			System.out.println(i +"---------"+getCellData(row, i));
-			if (!getCellData(row, i).contains(contains.pass) && !getCellData(row, i).contains(contains.fail)) {
-				setCellDataResult(i,row,contains.dataFolder+contains.fileExcelName,contains.fail);
-				break;
-			}
-			i++;
-		}
+		setCellDataResult(colFail,row,contains.dataFolder+contains.fileExcelName,contains.fail);
 	}
 }

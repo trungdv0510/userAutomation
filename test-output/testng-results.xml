@@ -1,28 +1,145 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="4" total="6" passed="0" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-04-07T01:37:15 ICT" name="Test login in Admin" finished-at="2022-04-07T01:38:03 ICT" duration-ms="48292">
+  <suite started-at="2022-06-13T22:56:28 ICT" name="Test login in Admin" finished-at="2022-06-13T22:57:36 ICT" duration-ms="67587">
     <groups>
     </groups>
-    <test started-at="2022-04-07T01:37:15 ICT" name="Test" finished-at="2022-04-07T01:38:03 ICT" duration-ms="48292">
-      <class name="Flows.login">
-        <test-method is-config="true" signature="BeforeSuite(org.testng.ITestContext)[pri:0, instance:Flows.login@515c6049]" started-at="2022-04-07T01:37:15 ICT" name="BeforeSuite" finished-at="2022-04-07T01:37:15 ICT" duration-ms="420" status="PASS">
+    <test started-at="2022-06-13T22:56:28 ICT" name="Test cho chức năng đăng nhập 1" finished-at="2022-06-13T22:57:36 ICT" duration-ms="67587">
+      <class name="Flows.LoginFacebook">
+        <test-method is-config="true" signature="beforeMethod(org.testng.ITestContext,java.lang.reflect.Method,java.lang.String)[pri:0, instance:Flows.LoginFacebook@6b2ea799]" started-at="2022-06-13T22:57:26 ICT" name="beforeMethod" finished-at="2022-06-13T22:57:26 ICT" duration-ms="14" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@40ac6b76]]>
+                <![CDATA[org.testng.TestRunner@800d065]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void Flows.LoginFacebook.testForLoginPage(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test login anime sau đó để ko ]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testForLoginPage(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:Flows.LoginFacebook@6b2ea799]" started-at="2022-06-13T22:57:26 ICT" name="testForLoginPage" data-provider="login" finished-at="2022-06-13T22:57:26 ICT" duration-ms="281" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[regrester]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[trungdv]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[987654321]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Hà Nội]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at org.testng.Assert.assertTrue(Assert.java:55)
+at Flows.LoginFacebook.testForLoginPage(LoginFacebook.java:30)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testForLoginPage -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestContext,org.testng.ITestResult,java.lang.String)[pri:0, instance:Flows.LoginFacebook@6b2ea799]" started-at="2022-06-13T22:57:26 ICT" name="afterMethod" finished-at="2022-06-13T22:57:35 ICT" duration-ms="8695" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@800d065]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=testForLoginPage status=FAILURE method=LoginFacebook.testForLoginPage(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:Flows.LoginFacebook@6b2ea799] output={null}]]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[web]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- Flows.LoginFacebook -->
+      <class name="Flows.login">
+        <test-method is-config="true" signature="BeforeSuite(org.testng.ITestContext)[pri:0, instance:Flows.login@5fe94a96]" started-at="2022-06-13T22:56:28 ICT" name="BeforeSuite" finished-at="2022-06-13T22:56:28 ICT" duration-ms="436" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@800d065]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BeforeSuite -->
-        <test-method is-config="true" signature="beforeTest(org.testng.ITestContext,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Flows.login@515c6049]" started-at="2022-04-07T01:37:15 ICT" name="beforeTest" finished-at="2022-04-07T01:37:21 ICT" duration-ms="5845" status="PASS">
+        <test-method is-config="true" signature="beforeTest(org.testng.ITestContext,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Flows.login@5fe94a96]" started-at="2022-06-13T22:56:28 ICT" name="beforeTest" finished-at="2022-06-13T22:56:34 ICT" duration-ms="5378" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@40ac6b76]]>
+                <![CDATA[org.testng.TestRunner@800d065]]>
               </value>
             </param>
             <param index="1">
@@ -32,7 +149,7 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[https://animehay.club/]]>
+                <![CDATA[https://www.facebook.com/]]>
               </value>
             </param>
             <param index="3">
@@ -40,45 +157,15 @@
                 <![CDATA[chrome]]>
               </value>
             </param>
-            <param index="4">
-              <value>
-                <![CDATA[0.0.0.0:4723]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[emulator-5554]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Android]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[com.easybrain.sudoku.android]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[com.easybrain.sudoku.gui.splash.SplashActivity]]>
-              </value>
-            </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="beforeMethod(org.testng.ITestContext,java.lang.reflect.Method,java.lang.String)[pri:0, instance:Flows.login@515c6049]" started-at="2022-04-07T01:37:22 ICT" name="beforeMethod" finished-at="2022-04-07T01:37:22 ICT" duration-ms="220" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(org.testng.ITestContext,java.lang.reflect.Method,java.lang.String)[pri:0, instance:Flows.login@5fe94a96]" started-at="2022-06-13T22:56:34 ICT" name="beforeMethod" finished-at="2022-06-13T22:56:35 ICT" duration-ms="364" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@40ac6b76]]>
+                <![CDATA[org.testng.TestRunner@800d065]]>
               </value>
             </param>
             <param index="1">
@@ -88,14 +175,14 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[Test login anime]]>
+                <![CDATA[Test login anime sau đó để ko ]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="regesterUser(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:Flows.login@515c6049]" started-at="2022-04-07T01:37:22 ICT" name="regesterUser" data-provider="loginA" finished-at="2022-04-07T01:37:53 ICT" duration-ms="31163" status="FAIL">
+        <test-method signature="regesterUser(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:Flows.login@5fe94a96]" started-at="2022-06-13T22:56:35 ICT" name="regesterUser" data-provider="loginA" finished-at="2022-06-13T22:57:06 ICT" duration-ms="31038" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -168,16 +255,16 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- regesterUser -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestContext,org.testng.ITestResult,java.lang.String)[pri:0, instance:Flows.login@515c6049]" started-at="2022-04-07T01:37:53 ICT" name="afterMethod" finished-at="2022-04-07T01:38:03 ICT" duration-ms="9463" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestContext,org.testng.ITestResult,java.lang.String)[pri:0, instance:Flows.login@5fe94a96]" started-at="2022-06-13T22:57:06 ICT" name="afterMethod" finished-at="2022-06-13T22:57:26 ICT" duration-ms="20450" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@40ac6b76]]>
+                <![CDATA[org.testng.TestRunner@800d065]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[TestResult name=regesterUser status=FAILURE method=login.regesterUser(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:Flows.login@515c6049] output={null}]]]>
+                <![CDATA[[TestResult name=regesterUser status=FAILURE method=login.regesterUser(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:Flows.login@5fe94a96] output={null}]]]>
               </value>
             </param>
             <param index="2">
@@ -189,7 +276,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="afterTest(java.lang.String)[pri:0, instance:Flows.login@515c6049]" started-at="2022-04-07T01:38:03 ICT" name="afterTest" finished-at="2022-04-07T01:38:03 ICT" duration-ms="757" status="PASS">
+        <test-method is-config="true" signature="afterTest(java.lang.String)[pri:0, instance:Flows.login@5fe94a96]" started-at="2022-06-13T22:57:35 ICT" name="afterTest" finished-at="2022-06-13T22:57:36 ICT" duration-ms="630" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -200,11 +287,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method is-config="true" signature="afterSuite(org.testng.ITestContext)[pri:0, instance:Flows.login@515c6049]" started-at="2022-04-07T01:38:03 ICT" name="afterSuite" finished-at="2022-04-07T01:38:03 ICT" duration-ms="129" status="PASS">
+        <test-method is-config="true" signature="afterSuite(org.testng.ITestContext)[pri:0, instance:Flows.login@5fe94a96]" started-at="2022-06-13T22:57:36 ICT" name="afterSuite" finished-at="2022-06-13T22:58:09 ICT" duration-ms="32777" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@40ac6b76]]>
+                <![CDATA[org.testng.TestRunner@800d065]]>
               </value>
             </param>
           </params>
@@ -212,6 +299,6 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </reporter-output>
         </test-method> <!-- afterSuite -->
       </class> <!-- Flows.login -->
-    </test> <!-- Test -->
+    </test> <!-- Test cho chức năng đăng nhập 1 -->
   </suite> <!-- Test login in Admin -->
 </testng-results>
