@@ -48,12 +48,17 @@ public class excelFile {
 		String cellData = null;
 		try {
 			cell = sheetName.getRow(rowNum).getCell(colNum);
-			if (cell.getCellType() == cell.CELL_TYPE_NUMERIC) {
-				Object object = cell.getRawValue();
-				cellData = String.valueOf(object);
+			if (cell != null) {
+				if (cell.getCellType() == cell.CELL_TYPE_NUMERIC) {
+					Object object = cell.getRawValue();
+					cellData = String.valueOf(object);
+				}
+				else {
+					cellData = cell.getStringCellValue();
+				}
 			}
 			else {
-				cellData = cell.getStringCellValue();
+				cellData = "";
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

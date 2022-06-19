@@ -5,32 +5,21 @@
     <parameter name="bareURL" value="https://www.facebook.com/"/>
     <parameter name="chrome" value="chrome"/>
     <parameter name="author" value="Trung dv"/>
-    <parameter name="exelData" value="regrester.xlsx&gt;data&gt;regrester"/>
+    <parameter name="exelData" value="LoginFacebook.xlsx&gt;data&gt;login"/>
     <parameter name="type" value="web"/>
-    <parameter name="testname" value="Test login anime sau đó để ko "/>
+    <parameter name="testname" value="Test login facebook "/>
     <classes>
       <class name="Flows.LoginFacebook">
         <methods>
           <include name="afterSuite"/>
           <include name="afterTest"/>
-          <include name="testForLoginPage" invocation-numbers="0"/>
+          <include name="testForLoginPage"/>
           <include name="beforeMethod"/>
           <include name="beforeTest"/>
           <include name="afterMethod"/>
           <include name="BeforeSuite"/>
         </methods>
       </class> <!-- Flows.LoginFacebook -->
-      <class name="Flows.login">
-        <methods>
-          <include name="afterSuite"/>
-          <include name="afterTest"/>
-          <include name="regesterUser" invocation-numbers="0"/>
-          <include name="beforeMethod"/>
-          <include name="beforeTest"/>
-          <include name="afterMethod"/>
-          <include name="BeforeSuite"/>
-        </methods>
-      </class> <!-- Flows.login -->
     </classes>
   </test> <!-- Test cho chức năng đăng nhập 1(failed) -->
 </suite> <!-- Failed suite [Test login in Admin] -->

@@ -6,8 +6,8 @@
 		<parameter name="author" value="Trung dv" />
 		<parameter name="bareURL" value="https://www.facebook.com/" />
 		<parameter name="chrome" value="chrome" />
-		<parameter name="testname" value="Test login anime sau đó để ko " />
-		<parameter name="exelData" value="login.xlxs>data>login" />
+		<parameter name="testname" value="Test login facebook " />
+		<parameter name="exelData" value="Login.xlsx>data>login" />
 		<classes>
 			<class name="Flows.LoginFacebook"></class>
 		</classes>
