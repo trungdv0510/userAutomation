@@ -8,6 +8,8 @@ import org.testng.ITestContext;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.relevantcodes.extentreports.LogStatus;
+
 import Actions.LoginFacebookActions;
 import readExcel.dataMap;
 import readExcel.excelFile;
@@ -21,8 +23,11 @@ public class LoginFacebook extends setup{
 		int row = Integer.parseInt(No);
 		try {
 			assertTrue(login.checkLoginPage(driver));
+			testLogs.log(LogStatus.PASS, "Check page facebook success. ", "");
 			assertTrue(login.checkLogin(driver,Username,Password));
+			testLogs.log(LogStatus.PASS, "Input username and password success", "");
 			assertTrue(login.checkMessage(driver,Alert));
+			testLogs.log(LogStatus.PASS, "Check alert: "+Alert+" success", "");
 			excelFile.setPass(dataMap.login.Result.ordinal(), row, dataMap.login.Error.ordinal());
 		} catch (AssertionError e) {
 			// TODO: handle exception

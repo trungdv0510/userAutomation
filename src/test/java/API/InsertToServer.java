@@ -62,7 +62,7 @@ public class InsertToServer extends setup{
 			if (result.getStatus() == ITestResult.FAILURE) {
 				TestcaseStatus = "error";
 			}
-			else if(result.getStatus() == ITestResult.FAILURE){
+			else if(result.getStatus() == ITestResult.SUCCESS){
 				TestcaseStatus = "pass";
 			}
 			else{
