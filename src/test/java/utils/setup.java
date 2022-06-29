@@ -65,10 +65,9 @@ public class setup {
 	public static Method methodLocal;
 	public static String testnameLocal;
 	public static String running;
-
-	@Parameters({ "testname" })
+	@Parameters({ "testname","chrome" })
 	@BeforeMethod
-	public void beforeMethod(ITestContext ctx, Method method, String testname) {
+	public void beforeMethod(ITestContext ctx, Method method, String testname,String chrome) {
 		try {
 			TestUUID = UUID.randomUUID();
 			System.out.println("TestUUID" + TestUUID);
@@ -79,10 +78,12 @@ public class setup {
 			ctxLocal = ctx;
 			methodLocal = method;
 			testnameLocal = testname;
-			System.err.println("Video screen");
-			videoName = randomName.VideoAvi(this.getClass().getName());
-			pathVideoMp4 = randomName.pathVideoMp4(this.getClass().getName());
-			ScreenshotAndVideo.startRecord(videoName);
+			if (!chrome.contains("api")) {
+				System.err.println("Video screen");
+				videoName = randomName.VideoAvi(this.getClass().getName());
+				pathVideoMp4 = randomName.pathVideoMp4(this.getClass().getName());
+				ScreenshotAndVideo.startRecord(videoName);	
+			}
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.err.println(e.getMessage());

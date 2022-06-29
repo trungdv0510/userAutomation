@@ -32,6 +32,7 @@ public class LoginFacebook extends setup{
 		} catch (AssertionError e) {
 			// TODO: handle exception
 			excelFile.setFail(dataMap.login.Result.ordinal(), row, dataMap.login.Error.ordinal());
+			testLogs.log(LogStatus.FAIL, testName+" is failed", "");
 			assertTrue(false);
 		}
 	}
