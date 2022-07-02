@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
@@ -69,6 +70,7 @@ public class setup {
 	@BeforeMethod
 	public void beforeMethod(ITestContext ctx, Method method, String testname,String chrome) {
 		try {
+			contains.errorLog = null;
 			TestUUID = UUID.randomUUID();
 			System.out.println("TestUUID" + TestUUID);
 			testLogs = extent.startTest(testname + ": " + this.getClass().getName(),
@@ -138,6 +140,10 @@ public class setup {
 			String pathVideoFromServer = okHttpApi.insertImg(contains.folderReprotLocation+pathVideoMp4, contains.url+contains.ApiVideo, contains.MEDIA_TYPE_VIDEO);
 			testLogs.log(LogStatus.INFO, pathImgFromServer,"image");
 			testLogs.log(LogStatus.INFO, pathVideoFromServer,"video");
+			// kiểm tra xem có lỗi không để ghi log
+			if (!StringUtils.isBlank(contains.errorLog.toString())) {
+				testLogs.log(LogStatus.FAIL, contains.errorLog.toString(),"");
+			}
 			// Lấy thông số của bài test sau khi đã chạy xong
 			InsertToServer.testcase(ctx, result);
 			// lấy thông tin bài log của method
@@ -186,6 +192,7 @@ public class setup {
 			} else if (type.contains("sikuli")) {
 				screen = new Screen();
 			}
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -199,6 +206,7 @@ public class setup {
 	public void afterTest(String type) {
 		try {
 			System.err.println("AfterTest");
+			driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
 			if (type.contains("web")) {
 				if (driver != null) {
 					driver.quit();
@@ -232,10 +240,11 @@ public class setup {
 			// cấu hình cho testsuite
 			InsertToServer.testSuite();
 			extent.close();
-			
-			InsertToServer.insertTestSuite();
-			InsertToServer.insertTestCase();
-			InsertToServer.insertTestLog();
+			if (contains.sendToServer == 1) {
+				InsertToServer.insertTestSuite();
+				InsertToServer.insertTestCase();
+				InsertToServer.insertTestLog();
+			}
 			System.err.println("AfterSuite");
 		} catch (Exception e) {
 			// TODO: handle exception

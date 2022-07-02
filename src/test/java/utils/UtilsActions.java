@@ -3,7 +3,9 @@ package utils;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.WebDriver;
 
 import com.relevantcodes.extentreports.LogStatus;
@@ -47,4 +49,15 @@ public class UtilsActions {
 			}
 		}
 	}
+	
+	public static void saveErrorToLog(String error) {
+		if (StringUtils.isBlank(contains.errorLog)) {
+			contains.errorLog.append(error);
+		}
+		else {
+			contains.errorLog.append(" /n "+error);
+		}
+	}
+	
+	
 }

@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import utils.UtilsActions;
+
 public class LoginFacebookActions {
 	public boolean checkLoginPage(WebDriver driver) {
 		boolean result =false;
@@ -22,6 +24,7 @@ public class LoginFacebookActions {
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println(e.getMessage());
+			UtilsActions.saveErrorToLog(e.getMessage());
 		}
 		 return result;
 		
@@ -49,6 +52,7 @@ public class LoginFacebookActions {
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println(e.getMessage());
+			UtilsActions.saveErrorToLog(e.getMessage());
 		}
 		return result;
 	}
@@ -73,6 +77,7 @@ public class LoginFacebookActions {
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println(e.getMessage());
+			UtilsActions.saveErrorToLog(e.getMessage());
 		}
 		return result;
 	}
