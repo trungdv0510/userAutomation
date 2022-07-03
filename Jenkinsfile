@@ -1,9 +1,9 @@
 pipeline {
     agent any
-   // tools {
-        // Install the Maven version configured as "M3" and add it to the path.
-       // Maven "M3"
-    //}
+   tools { 
+      maven 'MAVEN_HOME' 
+      jdk 'JAVA_HOME' 
+    }
     stages {
         stage('run test automation') {
             steps {
