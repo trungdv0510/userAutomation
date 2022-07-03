@@ -161,6 +161,7 @@ public class setup {
 		System.err.println("BeforeTest");
 		try {
 			if (type.contains("web")) {
+				
 				if (chrome.contains("chrome")) {
 					WebDriverManager.chromedriver().setup();
 					driver = new ChromeDriver(ChromeCap("chrome"));
@@ -269,7 +270,7 @@ public class setup {
 
 		ChromeOptions options = new ChromeOptions();
 		options.setExperimentalOption("prefs", chromePrefs);
-
+		options.setHeadless(true);
 		options.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
 		options.addArguments("--disable-print-preview");
 		options.addArguments("disable-infobars");
@@ -277,7 +278,6 @@ public class setup {
 			options.addArguments("--headless");
 			options.addArguments("window-size=1920,1080");
 		}
-
 //		options.addArguments("--disable-extensions");
 //		options.addArguments("test-type");
 		options.addArguments("--disable-gpu", "start-maximized", "--log-level=3");
