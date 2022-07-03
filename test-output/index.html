@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">2 suites</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -118,6 +118,8 @@
     </div> <!-- navigator-root -->
     <div class="wrapper">
       <div class="main-panel-root">
+        <div panel-name="suite-auto_test" class="panel auto_test">
+        </div> <!-- panel auto_test -->
         <div panel-name="suite-Test_login_in_Admin" class="panel Test_login_in_Admin">
           <div class="suite-Test_login_in_Admin-class-passed">
             <div class="main-panel-header rounded-window-top">
@@ -136,6 +138,22 @@
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Test_login_in_Admin-class-passed -->
         </div> <!-- panel Test_login_in_Admin -->
+        <div panel-name="test-xml-auto_test" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">D:\IT\eclipse_WS\tester\testcase\testSuite.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;auto test&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;suite-files&gt;
+    &lt;suite-file path=&quot;./loginFacebook.xml&quot;/&gt;
+  &lt;/suite-files&gt;
+&lt;/suite&gt; &lt;!-- auto test --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
         <div panel-name="test-xml-Test_login_in_Admin" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">D:\IT\eclipse_WS\tester\testcase\loginFacebook.xml</span>
@@ -160,6 +178,15 @@
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
+        <div panel-name="testlist-auto_test" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for auto test</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
         <div panel-name="testlist-Test_login_in_Admin" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">Tests for Test login in Admin</span>
@@ -172,11 +199,43 @@
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
+        <div panel-name="group-auto_test" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for auto test</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
         <div panel-name="group-Test_login_in_Admin" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">Groups for Test login in Admin</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-auto_test" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for auto test</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_auto_test');
+function tableData_auto_test() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(0);
+window.suiteTableData['auto_test']= { tableData: data, tableDiv: 'times-div-auto_test'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 0 ms</span>
+              <div id="times-div-auto_test">
+              </div> <!-- times-div-auto_test -->
+            </div> <!-- times-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Test_login_in_Admin" class="panel">
@@ -197,15 +256,22 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testForLoginPage')
 data.setCell(0, 2, 'Flows.LoginFacebook')
-data.setCell(0, 3, 32452);
+data.setCell(0, 3, 22431);
 window.suiteTableData['Test_login_in_Admin']= { tableData: data, tableDiv: 'times-div-Test_login_in_Admin'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 32 seconds</span>
+              <span class="suite-total-time">Total running time: 22 seconds</span>
               <div id="times-div-Test_login_in_Admin">
               </div> <!-- times-div-Test_login_in_Admin -->
             </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-auto_test" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for auto test</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="reporter-Test_login_in_Admin" class="panel">
@@ -215,9 +281,23 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
+        <div panel-name="ignored-methods-auto_test" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
         <div panel-name="ignored-methods-Test_login_in_Admin" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-auto_test" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -230,32 +310,32 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">Flows.LoginFacebook</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">BeforeSuite(org.testng.TestRunner@63f855b)</span>
+                <span class="method-name">BeforeSuite(org.testng.TestRunner@697d6ded)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
-                <span class="method-name">beforeTest(org.testng.TestRunner@63f855b, web, https://www.facebook.com/, chrome)</span>
-                <span class="method-start">433 ms</span>
+                <span class="method-name">beforeTest(org.testng.TestRunner@697d6ded, web, https://www.facebook.com/, chrome)</span>
+                <span class="method-start">508 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-method before">
-                <span class="method-name">beforeMethod(org.testng.TestRunner@63f855b, public void Flows.LoginFacebook.testForLoginPage(java.lang.String,jav...)</span>
-                <span class="method-start">96431 ms</span>
+                <span class="method-name">beforeMethod(org.testng.TestRunner@697d6ded, public void Flows.LoginFacebook.testForLoginPage(java.lang.String,ja...)</span>
+                <span class="method-start">8047 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testForLoginPage(1, login, , , The email address or mobile number you entered isn't connected to an account. )</span>
-                <span class="method-start">96730 ms</span>
+                <span class="method-start">8314 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">afterMethod(org.testng.TestRunner@63f855b, [TestResult name=testForLoginPage status=SUCCESS method=LoginFacebook...)</span>
-                <span class="method-start">129188 ms</span>
+                <span class="method-name">afterMethod(org.testng.TestRunner@697d6ded, [TestResult name=testForLoginPage status=SUCCESS method=LoginFaceboo...)</span>
+                <span class="method-start">30750 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest(web)</span>
-                <span class="method-start">136576 ms</span>
+                <span class="method-start">37838 ms</span>
               </div> <!-- configuration-test after -->
               <div class="configuration-suite after">
-                <span class="method-name">afterSuite(org.testng.TestRunner@63f855b)</span>
-                <span class="method-start">136767 ms</span>
+                <span class="method-name">afterSuite(org.testng.TestRunner@697d6ded)</span>
+                <span class="method-start">38054 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
