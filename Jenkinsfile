@@ -8,9 +8,9 @@ pipeline {
         stage('run test automation') {
             steps {
                  // Run Maven on a Unix agent.
-             //sh "mvn -Dmaven.test.failure.ignore=true clean package"
+             	sh "mvn clean test -DtestngFile=testSuite.xml"
                  // To run Maven on a Windows agent, use
-               bat "mvn clean test -DtestngFile=testSuite.xml"
+               //bat "mvn clean test -DtestngFile=testSuite.xml"
             }
         }
     }
