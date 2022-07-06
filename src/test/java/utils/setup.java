@@ -270,7 +270,7 @@ public class setup {
 
 		ChromeOptions options = new ChromeOptions();
 		options.setExperimentalOption("prefs", chromePrefs);
-		options.setHeadless(true);
+		//options.setHeadless(true);
 		options.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
 		options.addArguments("--disable-print-preview");
 		options.addArguments("disable-infobars");
