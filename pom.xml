@@ -113,7 +113,7 @@
 					</includes>-->
 					<suiteXmlFiles>
 						<suiteXmlFile>testcase/${testngFile}</suiteXmlFile>
-						<!-- cmd: mvn clean test -DtestndFile= filename -->
+						<!-- cmd: mvn clean test -DtestngFile= ${testngFile} -->
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
