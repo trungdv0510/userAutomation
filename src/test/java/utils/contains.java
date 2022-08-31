@@ -18,20 +18,22 @@ public class contains {
 	public static final String folderVideoReport = "videoReport/";
 	// cấu hình url cho insert API
 	public static final String url = "http://localhost:8085/";
-	public static final String ApiTestSuite = "api/testsuite";
-	public static final String ApiTestCase = "api/testcase";
-	public static final String ApiTestCases = "api/testcases";
-	public static final String ApiTestLog = "api/testlog";
-	public static final String ApiTestLogs = "api/testlogs";
-	public static final String ApiImg = "api/img";
-	public static final String ApiVideo = "api/video";
+	public static final String ApiTestSuite = "api/testsuite/";
+	public static final String ApiTestCase = "api/testcase/";
+	public static final String ApiTestCases = "api/testcases/";
+	public static final String ApiTestLog = "api/testlog/";
+	public static final String ApiTestLogs = "api/testlogs/";
+	public static final String ApiImg = "api/img/";
+	public static final String ApiVideo = "api/video/";
+
+	public static final String apiRegression = "api/regression/save";
 	// cấu hình cho API thư viện OKHttp
 	public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
 	public static final MediaType MEDIA_TYPE_JPG = MediaType.parse("image/jpeg");
 	public static final MediaType MEDIA_TYPE_VIDEO = MediaType.parse("video/mp4");
 	public static StringBuilder errorLog=  new StringBuilder();
 	// kiểm tra xem có sendtoserver hay ko 
-	public static int sendToServer = 0; // 1 -> send to server
+	public static int sendToServer = 1; // 1 -> send to server
 	
 	// Current time
 	public static String getCurrentDateTime(String format) {

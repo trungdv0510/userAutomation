@@ -17,7 +17,7 @@ import utils.contains;
 import utils.setup;
 
 public class LoginFacebook extends setup{
-	private LoginFacebookActions login = new LoginFacebookActions();
+	private final LoginFacebookActions login = new LoginFacebookActions();
 	@Test(dataProvider = "login",priority = 1)
 	public void testForLoginPage(String No, String Testname, String Username, String Password, String Alert) {
 		int row = Integer.parseInt(No);
@@ -32,7 +32,7 @@ public class LoginFacebook extends setup{
 		} catch (AssertionError e) {
 			// TODO: handle exception
 			excelFile.setFail(dataMap.login.Result.ordinal(), row, dataMap.login.Error.ordinal());
-			testLogs.log(LogStatus.FAIL, testName+" is failed", "");
+			testLogs.log(LogStatus.FAIL, Testname+" testcase failed", "");
 			assertTrue(false);
 		}
 	}

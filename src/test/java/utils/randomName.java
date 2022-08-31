@@ -9,7 +9,7 @@ public class randomName {
 	}
 
 	public static String pathImg (String className) {
-		String pathfileIMG = contains.folderImgReport + "Img_" + className + "_" + UUID.randomUUID().toString() + ".jpg";
+		String pathfileIMG = contains.folderImgReport + "Img_" + className + "_" + UUID.randomUUID() + ".jpg";
 		return pathfileIMG;
 	}
 	
@@ -19,21 +19,21 @@ public class randomName {
 	}
 	
 	public static String VideoAvi (String className) {
-		String fileVideo = "Video_Avi_" + className + "_" + UUID.randomUUID().toString();
+		String fileVideo = "Video_Avi_" + className + "_" + UUID.randomUUID();
 		return fileVideo;
 	}
 	
 	public static String pathVideoMp4 (String className) {
-		String pathfileVideo = contains.folderVideoReport + "Video_Mp4_" + className + "_" + UUID.randomUUID().toString() + ".mp4";
+		String pathfileVideo = contains.folderVideoReport + "Video_Mp4_" + className + "_" + UUID.randomUUID() + ".mp4";
 		return pathfileVideo;
 	}
 	
 	public static String pathImgEvidence () {
-		String pathfileIMG = contains.folderImgReport + UUID.randomUUID().toString() + ".jpg";
+		String pathfileIMG = contains.folderImgReport + UUID.randomUUID() + ".jpg";
 		return pathfileIMG;
 	}
 	public static String pathVideoEvidence () {
-		String pathfileIMG = contains.folderVideoReport + UUID.randomUUID().toString() + ".avi";
+		String pathfileIMG = contains.folderVideoReport + UUID.randomUUID() + ".avi";
 		return pathfileIMG;
 	}
 }

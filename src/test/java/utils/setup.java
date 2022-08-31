@@ -141,14 +141,13 @@ public class setup {
 			testLogs.log(LogStatus.INFO, pathImgFromServer,"image");
 			testLogs.log(LogStatus.INFO, pathVideoFromServer,"video");
 			// kiểm tra xem có lỗi không để ghi log
-			if (!StringUtils.isBlank(contains.errorLog.toString())) {
+			if (!StringUtils.isBlank(contains.errorLog)) {
 				testLogs.log(LogStatus.FAIL, contains.errorLog.toString(),"");
 			}
 			// Lấy thông số của bài test sau khi đã chạy xong
 			InsertToServer.testcase(ctx, result);
 			// lấy thông tin bài log của method
 			InsertToServer.testLog();
-			System.out.println(runTime);
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.err.println(e.getMessage());
@@ -206,7 +205,6 @@ public class setup {
 	@AfterTest
 	public void afterTest(String type) {
 		try {
-			System.err.println("AfterTest");
 			driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
 			if (type.contains("web")) {
 				if (driver != null) {
@@ -221,13 +219,10 @@ public class setup {
 
 	@BeforeSuite
 	public void BeforeSuite(ITestContext itest) {
-		System.err.println("BeforeSuite");
 		SuiteUUID = UUID.randomUUID();
 		suiteName = itest.getCurrentXmlTest().getSuite().getName();
 		extent = null;
-		System.out.println("Suite name " + suiteName);
 		String systemURL = System.getProperty("user.dir");
-		System.out.println("Đường dẫn hiện tại là " + systemURL);
 		// System.setProperty("webdriver.chrome.driver",systemURL+"/lib/chromedriver.exe");
 		SuiteUUID = UUID.randomUUID();
 		PropertyConfigurator.configure("log/log4j.properties");
@@ -245,8 +240,8 @@ public class setup {
 				InsertToServer.insertTestSuite();
 				InsertToServer.insertTestCase();
 				InsertToServer.insertTestLog();
+				InsertToServer.insertRegression(itest);
 			}
-			System.err.println("AfterSuite");
 		} catch (Exception e) {
 			// TODO: handle exception
 		}

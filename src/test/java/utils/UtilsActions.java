@@ -13,7 +13,7 @@ import com.relevantcodes.extentreports.LogStatus;
 import API.okHttpApi;
 
 public class UtilsActions {
-	public void captureScreenJava() throws Exception, IOException, URISyntaxException {
+	public void captureScreenJava() throws Exception {
 		setup.pathfileIMGSave = randomName.pathImg(this.getClass().getName());
 		String imgPath = "";
 		int countImg = 0;
@@ -31,7 +31,7 @@ public class UtilsActions {
 			}
 		}
 	}
-	public void captureScreenSelenium(WebDriver driver) throws Exception, IOException, URISyntaxException {
+	public void captureScreenSelenium(WebDriver driver) throws Exception {
 		setup.pathfileIMGSave = randomName.pathImg(this.getClass().getName());
 		String imgPath = "";
 		int countImg = 0;

@@ -49,16 +49,32 @@ public class MapHashMap {
 			String testLogTime, String result){
 		HashMap<String, String> testLog = new HashMap<String, String>();
 		try {
-			testLog.put(tableDB.testlog.uuid.toString(), uuid);
-			testLog.put(tableDB.testlog.testcaseUUID.toString(), testcaseuuid);
-			testLog.put(tableDB.testlog.stepName.toString(), stepName);
-			testLog.put(tableDB.testlog.detail.toString(), detail);
-			testLog.put(tableDB.testlog.testLogTime.toString(), testLogTime);
-			testLog.put(tableDB.testlog.result.toString(), result);
+			testLog.put(tableDB.testLog.uuid.toString(), uuid);
+			testLog.put(tableDB.testLog.testcaseUUID.toString(), testcaseuuid);
+			testLog.put(tableDB.testLog.stepName.toString(), stepName);
+			testLog.put(tableDB.testLog.detail.toString(), detail);
+			testLog.put(tableDB.testLog.testLogTime.toString(), testLogTime);
+			testLog.put(tableDB.testLog.result.toString(), result);
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.err.println(e.getMessage());
 		}
 		return testLog;
+	}
+
+	public static HashMap<String,String> regressionTestMap(String uuid, String testcaseName,String evidenceLink, String result, String author, String ErrorDescription, String sprint){
+		HashMap<String,String> regression = new HashMap<>();
+		try {
+			regression.put(tableDB.regressionTest.uuid.toString(),uuid);
+			regression.put(tableDB.regressionTest.testcaseName.toString(),testcaseName);
+			regression.put(tableDB.regressionTest.evidenceLink.toString(),evidenceLink);
+			regression.put(tableDB.regressionTest.result.toString(),result);
+			regression.put(tableDB.regressionTest.author.toString(),author);
+			regression.put(tableDB.regressionTest.ErrorDescription.toString(),ErrorDescription);
+			regression.put(tableDB.regressionTest.sprint.toString(),sprint);
+		}catch (Exception e){
+			System.err.println(e.getMessage());
+		}
+		return regression;
 	}
 }

@@ -1,28 +1,25 @@
 package API;
 
-import java.net.InetAddress;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.UUID;
-
 import org.testng.ITestContext;
 import org.testng.ITestResult;
-
 import utils.contains;
 import utils.convert;
 import utils.setup;
+
+import java.net.InetAddress;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.UUID;
 
 public class InsertToServer extends setup{
 	public static HashMap<String, String> testSuiteAPI;
 	public static HashMap<String, String> testCaseAPI;
 	public static HashMap<String, String> testLogAPI;
-	public static List<HashMap<String, String>> listTestLog = new ArrayList<HashMap<String,String>>();
-	public static List<HashMap<String, String>> listTestCase = new ArrayList<HashMap<String,String>>();
+	public static List<HashMap<String, String>> listTestLog = new ArrayList<>();
+	public static List<HashMap<String, String>> listTestCase = new ArrayList<>();
+
 	public static void testSuite() {
 		try {
 			String suiteUUID = SuiteUUID.toString();
@@ -56,17 +53,12 @@ public class InsertToServer extends setup{
 			String TestcaseStartTime = contains.timeDateReport(testLogs.getTest().getStartedTime());
 			String TestcaseEndTime = contains.timeDateReport(testLogs.getTest().getEndedTime());
 			String TestcaseDuration = testLogs.getTest().getRunDuration();
-			String TestcaseStatus = "";
-			System.out.println(testLogs.getTest().getStatus().toString());
-			System.out.println(result.getStatus());
+			String TestcaseStatus = "skip";
 			if (result.getStatus() == ITestResult.FAILURE) {
 				TestcaseStatus = "error";
 			}
 			else if(result.getStatus() == ITestResult.SUCCESS){
 				TestcaseStatus = "pass";
-			}
-			else{
-				TestcaseStatus = "skip";
 			}
 			if (result.getStatus() == ITestResult.FAILURE || result.getStatus() == ITestResult.SKIP) {
 				totalFail++;
@@ -98,19 +90,31 @@ public class InsertToServer extends setup{
 			}
 		}
 	}
-	
+	public static HashMap<String,String> regressionTest(ITestContext ctx){
+		String uuid = UUID.randomUUID().toString();
+		String testcaseName = ctxLocal.getCurrentXmlTest().getSuite().getName();
+		String author = ctx.getCurrentXmlTest().getParameter("author");
+		String result = contains.pass;
+		String errorDescription =  contains.errorLog.toString();
+		String sprint = ctx.getCurrentXmlTest().getParameter("sprint");
+		String evidence = contains.url+contains.ApiTestSuite+SuiteUUID.toString();
+		if (totalFail>0) {
+			result = contains.fail;
+		}
+		return MapHashMap.regressionTestMap(uuid,testcaseName,evidence,result,author,errorDescription,sprint);
+	}
 	public static void insertTestSuite() {
 		if (okHttpApi.insert(testSuiteAPI, contains.url+contains.ApiTestSuite)) {
-			System.out.println("Insert testSuite to server sucess");
+			System.out.println("Insert testSuite to server success");
 		}
 		else {
 			System.out.println("Insert testSuite to server fail");
-		};
-	}
+		}
+    }
 	public static void insertTestCase() {
 		for (HashMap<String, String> hashMap : listTestCase) {
 			if (okHttpApi.insert(hashMap, contains.url+contains.ApiTestCase)) {
-				System.out.println("Insert testcase to server sucess");
+				System.out.println("Insert testcase to server success");
 			}else {
 				System.out.println("Insert testcase to server fail");
 			}
@@ -119,10 +123,19 @@ public class InsertToServer extends setup{
 	public static void insertTestLog() {
 		for (HashMap<String, String> hashMap : listTestLog) {
 			if (okHttpApi.insert(hashMap, contains.url+contains.ApiTestLog)) {
-				System.out.println("Insert testLog to server sucess");
+				System.out.println("Insert testLog to server success");
 			}else {
 				System.out.println("Insert testLog to server fail");
 			}
+		}
+	}
+	public static void insertRegression(ITestContext ctx){
+		HashMap<String,String> regressionAPI = regressionTest(ctx);
+		if (okHttpApi.insert(regressionAPI, contains.url+contains.apiRegression)) {
+			System.out.println("Insert regression to server success");
+		}
+		else {
+			System.out.println("Insert testSuite to server fail");
 		}
 	}
 }

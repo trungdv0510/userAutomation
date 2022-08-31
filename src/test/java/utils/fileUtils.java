@@ -11,8 +11,8 @@ public class fileUtils {
 			File file = new File(filePath);
 			// File (or directory) with new name
 			
-			boolean result = Files.deleteIfExists(file.toPath());;
-			return result;
+			boolean result = Files.deleteIfExists(file.toPath());
+            return result;
 		}catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();

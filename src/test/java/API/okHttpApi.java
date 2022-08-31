@@ -15,8 +15,8 @@ import utils.contains;
 import utils.fileUtils;
 
 public class okHttpApi {
-	private static OkHttpClient client = new OkHttpClient();
-	private static Gson gson = new Gson();
+	private static final OkHttpClient client = new OkHttpClient();
+	private static final Gson gson = new Gson();
 
 	public static boolean insert(HashMap<String, String> testSuite, String url) {
 		boolean responseCheck = false;
@@ -50,7 +50,7 @@ public class okHttpApi {
 
 				Response response = client.newCall(request).execute();
 				if (response.isSuccessful()) {
-					pathInServer = response.body().string().toString();
+					pathInServer = response.body().string();
 				}
 			}
 			System.out.println(pathInServer);
