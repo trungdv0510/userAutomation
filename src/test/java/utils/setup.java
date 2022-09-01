@@ -1,16 +1,13 @@
 package utils;
 
-import java.io.File;
-import java.lang.reflect.Method;
-import java.net.InetAddress;
-import java.net.URL;
-import java.sql.Date;
-import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.List;
-import java.util.UUID;
-import java.util.concurrent.TimeUnit;
-
+import API.InsertToServer;
+import API.okHttpApi;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.UnexpectedAlertBehaviour;
@@ -24,25 +21,14 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.sikuli.script.Screen;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
-
-import API.InsertToServer;
-import API.MapHashMap;
-import API.okHttpApi;
-import API.tableDB;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import java.io.File;
+import java.lang.reflect.Method;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 public class setup {
 	public static WebDriver driver;
@@ -51,7 +37,6 @@ public class setup {
 	public static AppiumDriver<MobileElement> appiumDriver;
 	public static Screen screen;
 	public String suiteName;
-	public String testName;
 	public static String videoName;
 	public static String pathfileIMGSave;
 	public static UUID SuiteUUID;
@@ -65,7 +50,6 @@ public class setup {
 	 */
 	public static Method methodLocal;
 	public static String testnameLocal;
-	public static String running;
 	@Parameters({ "testname","chrome" })
 	@BeforeMethod
 	public void beforeMethod(ITestContext ctx, Method method, String testname,String chrome) {
@@ -187,7 +171,7 @@ public class setup {
 				String appPackage =  ctx.getCurrentXmlTest().getParameter("appPackage");
 				String appActivity =  ctx.getCurrentXmlTest().getParameter("appActivity");
 				URL url = new URL("http://127.0.0.1:4723/wd/hub");
-				appiumDriver = new AppiumDriver<MobileElement>(url, configAppCapabilities(deviceName, udid,
+				appiumDriver = new AppiumDriver<>(url, configAppCapabilities(deviceName, udid,
 						platformName, platformVersion, appPackage, appActivity));
 			} else if (type.contains("sikuli")) {
 				screen = new Screen();
@@ -222,8 +206,6 @@ public class setup {
 		SuiteUUID = UUID.randomUUID();
 		suiteName = itest.getCurrentXmlTest().getSuite().getName();
 		extent = null;
-		String systemURL = System.getProperty("user.dir");
-		// System.setProperty("webdriver.chrome.driver",systemURL+"/lib/chromedriver.exe");
 		SuiteUUID = UUID.randomUUID();
 		PropertyConfigurator.configure("log/log4j.properties");
 		extent = ScreenshotAndVideo.Instance(extent, suiteName);
@@ -249,9 +231,9 @@ public class setup {
 	}
 
 	// config Chorme
-	public static DesiredCapabilities ChromeCap(String browser) throws Exception {
+	public static DesiredCapabilities ChromeCap(String browser) {
 //		System.setProperty("webdriver.chrome.driver", "libs/driver/chromedriver.exe");
-		HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
+		HashMap<String, Object> chromePrefs = new HashMap<>();
 		chromePrefs.put("profile.default_content_settings.popups", 0);
 //		chromePrefs.put("download.default_directory", txtFolderSave);
 		// disable save password pop-up

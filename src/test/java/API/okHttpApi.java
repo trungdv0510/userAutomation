@@ -25,7 +25,9 @@ public class okHttpApi {
 			RequestBody body = RequestBody.create(contains.JSON, jsonTestSuite);
 			Request request = new Request.Builder().url(url).post(body).build();
 			Response response = client.newCall(request).execute();
-			System.out.println("reponse is "+response.body().string());
+			if (response.body()!=null) {
+				System.out.println("reponse is " + response.body().string());
+			}
 			if (response.isSuccessful()) {
 				responseCheck = true;
 			}
@@ -42,7 +44,8 @@ public class okHttpApi {
 			File fileUpload = fileUtils.getFileFromPath(filePath);
 			String[] fileName = filePath.split("\\/");
 			System.out.println(fileName[fileName.length-1]);
-			if (fileUpload.exists() && fileUpload != null) {
+			assert fileUpload != null;
+			if (fileUpload.exists()) {
 				RequestBody requestBody = new MultipartBody.Builder().setType(MultipartBody.FORM)
 						.addFormDataPart("fileName",fileName[fileName.length-1], RequestBody.create(mediaType, fileUpload)).build();
 
@@ -50,7 +53,9 @@ public class okHttpApi {
 
 				Response response = client.newCall(request).execute();
 				if (response.isSuccessful()) {
-					pathInServer = response.body().string();
+					if (response.body() !=null) {
+						pathInServer = response.body().string();
+					}
 				}
 			}
 			System.out.println(pathInServer);

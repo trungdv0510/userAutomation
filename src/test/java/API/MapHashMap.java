@@ -6,7 +6,7 @@ public class MapHashMap {
 	public static HashMap<String, String> testSuiteMap(String uuid,String suiteName,
 			String dateRun,String runTime,String testcasePass,String testcaseFail,String testlogSum,
 			String IpName,String hostName, String result){
-		HashMap<String, String> testSuite = new HashMap<String, String>();
+		HashMap<String, String> testSuite = new HashMap<>();
 		try {
 			testSuite.put(tableDB.testSuite.uuid.toString(), uuid);
 			testSuite.put(tableDB.testSuite.suiteName.toString(), suiteName);
@@ -27,7 +27,7 @@ public class MapHashMap {
 	
 	public static HashMap<String, String> testCaseMap(String uuid,String testName,String methodName,String author,
 			String suiteUUID,String startTime,String endTime,String timeDuration, String result){
-		HashMap<String, String> testCase = new HashMap<String, String>();
+		HashMap<String, String> testCase = new HashMap<>();
 		try {
 			testCase.put(tableDB.testcase.uuid.toString(), uuid);
 			testCase.put(tableDB.testcase.testName.toString(), testName);
@@ -47,7 +47,7 @@ public class MapHashMap {
 	
 	public static HashMap<String, String> testLogMap(String uuid,String testcaseuuid,String stepName,String detail,
 			String testLogTime, String result){
-		HashMap<String, String> testLog = new HashMap<String, String>();
+		HashMap<String, String> testLog = new HashMap<>();
 		try {
 			testLog.put(tableDB.testLog.uuid.toString(), uuid);
 			testLog.put(tableDB.testLog.testcaseUUID.toString(), testcaseuuid);

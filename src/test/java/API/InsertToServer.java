@@ -135,7 +135,7 @@ public class InsertToServer extends setup{
 			System.out.println("Insert regression to server success");
 		}
 		else {
-			System.out.println("Insert testSuite to server fail");
+			System.out.println("Insert regression to server fail");
 		}
 	}
 }

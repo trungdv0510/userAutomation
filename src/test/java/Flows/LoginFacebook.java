@@ -1,20 +1,19 @@
 package Flows;
 
-import static org.testng.Assert.assertTrue;
-
-import java.util.Map;
-
+import Actions.LoginFacebookActions;
+import com.relevantcodes.extentreports.LogStatus;
 import org.testng.ITestContext;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import com.relevantcodes.extentreports.LogStatus;
-
-import Actions.LoginFacebookActions;
 import readExcel.dataMap;
 import readExcel.excelFile;
 import utils.contains;
 import utils.setup;
+
+import java.util.Map;
+
+import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.fail;
 
 public class LoginFacebook extends setup{
 	private final LoginFacebookActions login = new LoginFacebookActions();
@@ -33,7 +32,7 @@ public class LoginFacebook extends setup{
 			// TODO: handle exception
 			excelFile.setFail(dataMap.login.Result.ordinal(), row, dataMap.login.Error.ordinal());
 			testLogs.log(LogStatus.FAIL, Testname+" testcase failed", "");
-			assertTrue(false);
+			fail();
 		}
 	}
 	@DataProvider(name ="login")
@@ -44,9 +43,8 @@ public class LoginFacebook extends setup{
 		excelFile.getSetUp(testData);
 
 		excelFile.setExcelInfo(contains.dataFolder + contains.fileExcelName, contains.sheetName);
-		Object[][] reArr = excelFile.getData(contains.testCaseName,
+		return excelFile.getData(contains.testCaseName,
 				dataMap.login.Result.ordinal(),
 				dataMap.login.Testname.ordinal());
-		return (reArr);
 	}
 }

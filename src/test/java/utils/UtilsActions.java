@@ -1,21 +1,16 @@
 package utils;
 
-import java.io.File;
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.util.List;
-
+import API.okHttpApi;
+import com.relevantcodes.extentreports.LogStatus;
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.WebDriver;
 
-import com.relevantcodes.extentreports.LogStatus;
-
-import API.okHttpApi;
+import java.io.File;
 
 public class UtilsActions {
-	public void captureScreenJava() throws Exception {
+	public void captureScreenJava() {
 		setup.pathfileIMGSave = randomName.pathImg(this.getClass().getName());
-		String imgPath = "";
+		String imgPath;
 		int countImg = 0;
 		imgPath = ScreenshotAndVideo.screenShotByJava(setup.pathfileIMGSave);
 		File img = new File(contains.folderReprotLocation+imgPath);
@@ -31,9 +26,9 @@ public class UtilsActions {
 			}
 		}
 	}
-	public void captureScreenSelenium(WebDriver driver) throws Exception {
+	public void captureScreenSelenium(WebDriver driver) {
 		setup.pathfileIMGSave = randomName.pathImg(this.getClass().getName());
-		String imgPath = "";
+		String imgPath;
 		int countImg = 0;
 		imgPath = ScreenshotAndVideo.screenShotBySelenium(driver,setup.pathfileIMGSave);
 		File img = new File(contains.folderReprotLocation+imgPath);
@@ -55,7 +50,7 @@ public class UtilsActions {
 			contains.errorLog.append(error);
 		}
 		else {
-			contains.errorLog.append(" /n "+error);
+			contains.errorLog.append(" /n ").append(error);
 		}
 	}
 	

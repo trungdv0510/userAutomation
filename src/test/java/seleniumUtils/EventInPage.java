@@ -1,20 +1,15 @@
 package seleniumUtils;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import org.python.antlr.PythonParser.return_stmt_return;
-import org.python.modules.thread.thread;
-
 import utils.UtilsActions;
-import utils.contains;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 public class EventInPage {
 	public static boolean clickButton(WebDriver driver, By elementFindBy) {
@@ -111,7 +106,7 @@ public class EventInPage {
 		return check;
 	}
 	public static List<String> getAllOptionValueInSelectComboBox(WebDriver driver, By elementFindBy) {
-		List<String> allOption = new ArrayList<String>();
+		List<String> allOption = new ArrayList<>();
 		try {
 			WebElement combobox = driver.findElement(elementFindBy);
 			Select selectCombobox = new Select(combobox);

@@ -1,22 +1,15 @@
 package readExcel;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.util.ArrayList;
-
-import org.apache.commons.codec.binary.StringUtils;
 import org.apache.poi.ss.usermodel.BorderStyle;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.IndexedColors;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFFont;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
+import org.apache.poi.xssf.usermodel.*;
 import utils.contains;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
 
 public class excelFile {
 	private static XSSFWorkbook workBook;
@@ -45,7 +38,7 @@ public class excelFile {
 		
 	}
 	public static String getCellData(int rowNum, int colNum) {
-		String cellData = null;
+		String cellData;
 		try {
 			cell = sheetName.getRow(rowNum).getCell(colNum);
 			if (cell != null) {
@@ -73,7 +66,7 @@ public class excelFile {
 	}
 	public static ArrayList<Integer> getRowByTCNameIndex(String tcName,int colIndex){
 		int lastRow = getLastRowIndex();
-		ArrayList<Integer> listRow = new ArrayList<Integer>();
+		ArrayList<Integer> listRow = new ArrayList<>();
 		for (int i = 0; i <= lastRow; i++) {
 			if (getCellData(i,colIndex).contains(tcName)) {
 				listRow.add(i);
@@ -141,8 +134,10 @@ public class excelFile {
 	}
 	public static void setPass(int colPass, int row, int colFail) {
 		setCellDataResult(colPass,row,contains.dataFolder+contains.fileExcelName,contains.pass);
+		setCellDataResult(colFail,row,contains.dataFolder+contains.fileExcelName,"");
 	}
 	public static void setFail(int colPass, int row, int colFail) {
 		setCellDataResult(colFail,row,contains.dataFolder+contains.fileExcelName,contains.fail);
+		setCellDataResult(colPass,row,contains.dataFolder+contains.fileExcelName,"");
 	}
 }

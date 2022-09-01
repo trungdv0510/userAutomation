@@ -1,33 +1,29 @@
 package utils;
 
-import java.awt.AWTException;
-import java.awt.Dimension;
-import java.awt.GraphicsConfiguration;
-import java.awt.GraphicsEnvironment;
-import java.awt.Rectangle;
-import java.awt.Robot;
-import java.awt.Toolkit;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import javax.imageio.ImageIO;
-import org.monte.media.FormatKeys.MediaType;
+import com.relevantcodes.extentreports.ExtentReports;
 import org.apache.commons.io.FileUtils;
 import org.monte.media.Format;
+import org.monte.media.FormatKeys.MediaType;
 import org.monte.media.Registry;
+import org.monte.media.math.Rational;
 import org.monte.screenrecorder.ScreenRecorder;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-import com.relevantcodes.extentreports.ExtentReports;
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
-import static org.monte.media.AudioFormatKeys.*;
+import static org.monte.media.AudioFormatKeys.EncodingKey;
+import static org.monte.media.AudioFormatKeys.FrameRateKey;
+import static org.monte.media.AudioFormatKeys.KeyFrameIntervalKey;
+import static org.monte.media.AudioFormatKeys.MIME_AVI;
+import static org.monte.media.AudioFormatKeys.MediaTypeKey;
+import static org.monte.media.AudioFormatKeys.MimeTypeKey;
 import static org.monte.media.VideoFormatKeys.*;
-import org.monte.media.math.Rational;
 public class ScreenshotAndVideo extends ScreenRecorder{
 
 	public static ScreenRecorder screenRecorder;
@@ -56,7 +52,7 @@ public class ScreenshotAndVideo extends ScreenRecorder{
 	        BufferedImage bufferedImage = robot.createScreenCapture(rectangle);
 	        File oDest = new File(pathSave + imgPath);
 	        File directory = new File(oDest.getParent());
-	        if (! directory.exists()){
+	        if (!directory.exists()){
 	            directory.mkdirs();
 	        }
 			ImageIO.write(bufferedImage, "jpg", oDest);
@@ -81,7 +77,6 @@ public class ScreenshotAndVideo extends ScreenRecorder{
 		} else if (!movieFolder.isDirectory()) {
 			throw new IOException("\"" + movieFolder + "\" is not a directory.");
 		}
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH-mm-ss");
 		return new File(movieFolder,
 				name +"." + Registry.getInstance().getExtension(fileFormat));
 	}
@@ -115,8 +110,7 @@ public class ScreenshotAndVideo extends ScreenRecorder{
 		
 		public static ExtentReports Instance(ExtentReports extent, String suiteName) {
 			String Path = contains.folderReprotLocation +suiteName+ ".html";
-			System.out.println(Path);
-			extent = new ExtentReports(Path, true);
+			 extent = new ExtentReports(Path, true);
 			// extent.config().documentTitle("TesterToday").reportName("TesterVN");
 			return extent;
 		} 

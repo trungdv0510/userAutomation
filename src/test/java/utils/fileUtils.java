@@ -10,9 +10,7 @@ public class fileUtils {
 			// File (or directory) with old name
 			File file = new File(filePath);
 			// File (or directory) with new name
-			
-			boolean result = Files.deleteIfExists(file.toPath());
-            return result;
+			return Files.deleteIfExists(file.toPath());
 		}catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
