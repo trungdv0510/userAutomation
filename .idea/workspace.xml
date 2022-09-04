@@ -5,8 +5,230 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c429fc35-dfe0-4039-ab3e-c0e64e38a746" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../AndroidStudioProjects/moblie_1/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../AndroidStudioProjects/moblie_1/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../AndroidStudioProjects/moblie_1/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../AndroidStudioProjects/moblie_1/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../AndroidStudioProjects/moblie_1/.idea/deploymentTargetDropDown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../AndroidStudioProjects/moblie_1/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../AndroidStudioProjects/moblie_1/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../AndroidStudioProjects/moblie_1/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JavaMicroSevices/java_micro/java_micro.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TeraCom/Consumer/src/main/java/com/Consumer/Consumer/KafkaConfig/KafkaConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TeraCom/Consumer/src/main/java/com/Consumer/Consumer/KafkaConfig/KafkaTopic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TeraCom/Consumer/src/main/java/com/Consumer/Consumer/Models/UserModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TeraCom/Consumer/src/main/java/com/Consumer/Consumer/Services/ConsumerServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TeraCom/Consumer/src/main/java/com/Consumer/Consumer/Utils/Constains.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TeraCom/DemoKafka/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TeraCom/DemoKafka/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TeraCom/DemoKafka/src/main/java/com/kafka/DemoKafka/Models/UserModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TeraCom/DemoKafka/src/main/java/com/kafka/DemoKafka/Services/KafkaConsumerServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TeraCom/kibana-8.3.2/node_modules/bowser/.idea/bowser.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TeraCom/kibana-8.3.2/node_modules/clone/clone.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TeraCom/kibana-8.3.2/node_modules/pdfmake/node_modules/iconv-lite/.idea/iconv-lite.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TeraCom/kibana-8.3.2/node_modules/tinygradient/tinygradient.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TeraCom/logstash-8.3.2/vendor/bundle/jruby/2.5.0/gems/http_parser.rb-0.6.0-java/ext/ruby_http_parser/vendor/http-parser-java/src/Http-parser.java.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../codeAuto/.metadata/.plugins/org.eclipse.wildwebdeveloper.embedder.node/node-v12.16.1-win-x64/node_modules/npm/node_modules/clone/clone.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../intelliJ_WS/.idea/intelliJ_WS.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/data/login.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/login.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220302-002403/imgReport/Img_Flows.login_24a1de89-a3d9-4b5b-a8d4-3cf810ac4395.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220302-002403/videoReport/Video_Avi_Flows.login_05f80bc2-4aa0-42e0-a974-a9d3e9273bfd.avi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220302-002403/videoReport/Video_Mp4_Flows.login_ff740326-1a6c-47f6-a2d0-3a52831bc287.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220302-003302/imgReport/Img_Flows.login_df7823c5-cd2e-430f-bc6f-5d515f1328a6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220302-003302/videoReport/Video_Avi_Flows.login_34a16210-7de8-4a50-8917-2f17f1ec6d22.avi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220302-003302/videoReport/Video_Mp4_Flows.login_3a4b192c-b6ca-4500-b04b-5b308ca68d10.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220302-222830/imgReport/Img_Flows.login_a7465d66-1525-45a9-a314-acb0a8e9cf51.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220302-222830/videoReport/Video_Mp4_Flows.login_08659abb-a451-45c7-bda1-77348a21c99b.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220303-002530/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220303-002530/imgReport/Img_Flows.login_f2520e4d-0ce8-43f7-9735-bb4e20a06cae.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220303-002530/videoReport/Video_Mp4_Flows.login_3020dbe3-b5f7-479f-b9f4-e1a4f5d80c25.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220314-125011/videoReport/Video_Avi_Flows.login_d19a5640-8db1-4797-bb1a-4c82c2dbe3f3.avi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220314-125323/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220314-125323/imgReport/Img_Flows.login_0f98f136-385f-4034-96cc-b02f9362ec80.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220314-125323/imgReport/Img_Flows.login_56c7daf1-5868-4be9-9f69-2c84dd9ade80.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220314-125323/imgReport/Img_Flows.login_aba42ce6-69b4-446a-858f-6bdea687b7a2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220314-125323/videoReport/Video_Mp4_Flows.login_a37d23e8-b449-425b-a2a8-8145998fa062.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220314-125323/videoReport/Video_Mp4_Flows.login_bd18246c-bf71-4e45-9627-1ace494e95e0.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220314-125323/videoReport/Video_Mp4_Flows.login_ee7b9fc7-35ba-4ad5-80d0-ecbe559c4c87.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-190319/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-190319/imgReport/Img_Flows.login_098199fb-efb2-4457-916d-2aeff5cb39c5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-190319/videoReport/Video_Mp4_Flows.login_fc4ca982-9d45-495d-b93b-898de6b9e9ff.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-190536/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-190536/imgReport/Img_Flows.login_2b993100-c3f3-4e87-acec-ebb96e867496.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-190536/videoReport/Video_Mp4_Flows.login_1d1702b3-6eba-403c-a3cf-48aabe23ebcf.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-190955/imgReport/Img_Flows.login_896f6bfa-ab07-4104-b7b5-b88dc340b49d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-190955/videoReport/Video_Avi_Flows.login_6107c940-661d-4edb-a8ac-0bffc2d1d26b.avi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-191544/imgReport/Img_Flows.login_256b643d-d901-42dc-ad8d-90d5b7d1da7f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-191544/videoReport/Video_Avi_Flows.login_553a47db-e8ca-4d98-a260-68f341846fbc.avi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-191902/imgReport/Img_Flows.login_73ef2488-bfae-4d70-ad4d-49a426b0e92d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-191902/videoReport/Video_Avi_Flows.login_679449f6-7659-4bc9-8925-ba01e67509ae.avi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-192018/imgReport/Img_Flows.login_63131148-f407-4268-a54c-51b45c0986ee.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-192018/videoReport/Video_Avi_Flows.login_1474f65c-1b2a-4882-822c-602e3bef2fa9.avi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-193258/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-193258/imgReport/Img_Flows.login_fd04ef14-72e5-44c5-a38e-5147092e5173.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-193258/videoReport/Video_Mp4_Flows.login_de2ad5f0-5370-4133-9324-26983017101d.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-202723/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-202723/imgReport/Img_Flows.login_d7cdf875-b19c-41b3-bf90-2e5bb4498980.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-202723/videoReport/Video_Avi_Flows.login_de850dd3-fe9d-4ec2-9cc3-5519a04fd328.avi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-203048/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-203048/imgReport/Img_Flows.login_adb4a388-7bc3-42f1-a2e6-0493ea28c226.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-203048/videoReport/Video_Avi_Flows.login_0dd6c35c-74b7-4413-8db6-ee6560656066.avi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-204349/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-204349/imgReport/Img_Flows.login_eb55c77a-7b73-494b-b4ee-ae6dce8ade75.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-204349/videoReport/Video_Avi_Flows.login_cdc0c486-59a3-4331-92f9-79be59f30f48.avi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-235043/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-235043/imgReport/Img_Flows.login_5b4bdfe9-65fb-4e68-86ab-dcb34cbec53a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-235043/videoReport/Video_Mp4_Flows.login_027cc67b-728e-4b71-9a20-588c2c18a52f.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-235650/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-235650/imgReport/Img_Flows.login_d39cac64-7742-4837-82d3-fc63a0bfc880.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220405-235650/videoReport/Video_Mp4_Flows.login_d1280b36-4783-4bdc-afb3-ee3d9733a3c8.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-001522/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-001522/imgReport/Img_Flows.login_a06cb277-6c26-4f92-a30a-5872290c0889.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-001522/videoReport/Video_Mp4_Flows.login_c4c8ef8e-8b19-44ba-a65e-0707e42aa5f3.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-004137/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-004137/imgReport/Img_Flows.login_3b67b2bf-97d2-440a-b97f-27c6e98b5865.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-004137/videoReport/Video_Mp4_Flows.login_fbf54a29-1807-4a1f-bee8-7fcfef774198.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-004829/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-004829/imgReport/Img_Flows.login_50e1d3dc-f367-4a70-90d4-660a536f72b0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-004829/videoReport/Video_Mp4_Flows.login_49ccaa67-b808-48e7-9253-9c1e08e4bd7b.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-005601/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-005601/imgReport/Img_Flows.login_3a9cddf4-85ba-4483-978a-83acb4f03449.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-005601/videoReport/Video_Mp4_Flows.login_cca54e01-68c9-474f-abbd-1954a5fa72e0.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-010102/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-010102/imgReport/Img_Flows.login_e1f2236c-bc8e-4f56-a48d-2d3cfb469be6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-010102/videoReport/Video_Mp4_Flows.login_6435b615-7758-4f55-aec3-b57670d271df.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-010951/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-010951/imgReport/Img_Flows.login_2b1aaa5b-1e77-4a0d-95c8-3da7c64ae40e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-010951/videoReport/Video_Mp4_Flows.login_426e643e-4713-4d91-8499-29c8f6160454.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-011330/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-011330/imgReport/Img_Flows.login_747c262a-4b23-4164-a5f3-9468ed50f31f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-011330/videoReport/Video_Mp4_Flows.login_b5332f42-440f-415a-8557-df0bf569b9ea.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-011807/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-011807/imgReport/Img_Flows.login_bc86a22f-5a18-44f4-9982-d53dea5de311.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-011807/videoReport/Video_Mp4_Flows.login_92bd0246-2bdf-4ecd-8816-5b9e0f57e052.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-012140/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-012140/imgReport/Img_Flows.login_c2b1705c-c5da-443b-b1a9-50fc99e728fa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-012140/videoReport/Video_Mp4_Flows.login_a8c2a838-45b6-465e-ab8b-aacb5c7203d9.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-013512/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-013512/imgReport/Img_Flows.login_751a79d7-3106-4b45-869b-bf4145eb0cdf.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-013512/videoReport/Video_Mp4_Flows.login_f35e6961-7505-480b-aca5-d5ae0c32c6fa.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-013911/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-013911/imgReport/Img_Flows.login_98a48a3b-e6cc-469d-9d4c-54e5fb2753b3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-013911/videoReport/Video_Mp4_Flows.login_f7bd2d8c-77e9-48f0-a1fa-b52b1b724d46.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-014335/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-014335/imgReport/Img_Flows.login_65fcf53d-691d-4fae-9bc0-0e79fd8a3ced.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-014335/videoReport/Video_Mp4_Flows.login_e163e6df-ff81-46ce-af5e-52b6f93139eb.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-014838/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-014838/imgReport/Img_Flows.login_660c926d-0d60-46ed-bfb4-cb11234b98a5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220406-014838/videoReport/Video_Mp4_Flows.login_8b2c9cf4-c486-427f-93b6-8dda10bf9ea9.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-005851/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-005851/imgReport/Img_Flows.login_30701c38-5886-48ba-8515-65299731609f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-005851/videoReport/Video_Mp4_Flows.login_2ae7de85-e706-4ec1-a697-2105fd15da1a.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-010310/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-010310/imgReport/Img_Flows.login_399daf4d-5ae5-4f0c-a260-9987b1027baa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-010310/videoReport/Video_Mp4_Flows.login_19dafde6-74b4-4d21-b55a-3d8717dbb27e.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-010837/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-010837/imgReport/Img_Flows.login_74abc460-249e-48d6-b513-4a7bf8739b7e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-010837/videoReport/Video_Mp4_Flows.login_32c3e675-b09e-48e3-943a-ad8e1bb16272.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-011303/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-011303/imgReport/Img_Flows.login_a22643d7-8286-405c-9034-6e76e16d0ed6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-011303/videoReport/Video_Mp4_Flows.login_0c0ca577-d599-4029-a326-479f7ebc4862.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-012008/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-012008/imgReport/Img_Flows.login_ff4581a9-017c-4f14-877c-c061b3bb97c1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-012008/videoReport/Video_Mp4_Flows.login_a90d4140-3cbf-4bac-bc25-44c7affd4aef.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-012349/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-012349/imgReport/Img_Flows.login_a8ccdada-3de6-4c32-86bf-c74f2b0ec7ae.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-012349/videoReport/Video_Mp4_Flows.login_b1622875-9e1d-41d7-bbbb-2227f4e57644.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-012913/imgReport/Img_Flows.login_14ccae83-c928-4a8c-89d9-19a508b0a830.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-012913/videoReport/Video_Avi_Flows.login_f68fbf96-b06a-4284-b466-5013f554a030.avi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-013053/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-013053/imgReport/Img_Flows.login_ae24c98a-bba5-4cd3-a3c9-15dffb60e2de.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-013053/videoReport/Video_Mp4_Flows.login_b45bccc8-1a3a-44b8-ab10-dd696bae2334.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-013313/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-013313/imgReport/Img_Flows.login_fa01d4c1-71a1-4017-9cbc-499948fd71c2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-013313/videoReport/Video_Mp4_Flows.login_077deb2e-98f3-45fc-8036-15b7635c2cd1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-013715/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-013715/imgReport/Img_Flows.login_ff3c8408-2dea-4825-9163-18989b3eacfe.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-013715/videoReport/Video_Mp4_Flows.login_57639bb7-caa4-438e-853a-9442dab66cbe.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-014541/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-014541/imgReport/Img_Flows.login_07c0f715-e15a-4deb-acb4-2e11c607af06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-014541/videoReport/Video_Mp4_Flows.login_f4596c9a-bda9-4f00-9719-f1ce3bc13616.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-014822/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-014822/imgReport/Img_Flows.login_78aad2fa-ecd2-422b-a514-cecbd4b6ee43.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220407-014822/videoReport/Video_Mp4_Flows.login_650c25eb-74f8-4c35-9bef-8d25426ef1c6.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220409-171434/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220409-171434/imgReport/Img_Flows.login_f0043a44-7798-405b-9c5f-c80f9734ed6b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220409-171434/videoReport/Video_Mp4_Flows.login_17cbe66e-5db4-4ce3-a300-b50b9287dc60.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220427-224611/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220427-224611/imgReport/Img_Flows.login_59b449a3-f5e5-4567-a3cf-b144dc7a36c5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220427-224611/videoReport/Video_Mp4_Flows.login_3a95cd09-e662-4f4c-90e9-55f5c11d6f95.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220524-172617/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220524-172617/imgReport/Img_Flows.login_a25b9415-e5f9-451d-965f-e0b86d0489de.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220524-172617/videoReport/Video_Mp4_Flows.login_c56efa18-2f26-42a9-befc-ffd96392621f.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220524-193408/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220524-193408/imgReport/Img_Flows.login_eb49fb16-c334-4c56-af5f-3937f470880a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220524-193408/videoReport/Video_Mp4_Flows.login_decab2f7-2879-4b27-b97e-3486361db4f4.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220524-234626/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220524-234626/imgReport/Img_Flows.login_b30c9d96-c384-4e7c-8e60-83c02476b51c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220524-234626/videoReport/Video_Mp4_Flows.login_232f255f-be08-464a-ad1c-0b7c7b99b16f.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220526-104139/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220526-104139/imgReport/Img_Flows.login_159d6d3b-06ec-4316-aa8e-5dde45bf3ef6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220526-104139/videoReport/Video_Mp4_Flows.login_83504b9e-7786-46a2-81b6-8694e6edf130.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220529-143348/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220529-143348/imgReport/Img_Flows.login_86c00c5d-c5c1-4069-bd09-7566b02cff07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220529-143348/imgReport/Img_Flows.login_c57f73a8-e525-4eff-b363-488c0086e612.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220529-143348/videoReport/Video_Mp4_Flows.login_0d3bde4a-f4b5-4b52-a162-4ad6e49f4334.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220529-143348/videoReport/Video_Mp4_Flows.login_50e585ab-c837-4b0f-91d8-3bd0907ad0ce.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220529-175541/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220529-175541/imgReport/Img_Flows.login_f3f204f0-fa53-4fd5-aacc-f912de5c4732.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220529-175541/videoReport/Video_Mp4_Flows.login_d7bb570f-5d53-4981-8d29-d2a54809a648.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220529-180001/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220529-180001/imgReport/Img_Flows.LoginFacebook_a8f484e9-d9a2-4a67-a27c-c7589654c9db.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220529-180001/imgReport/Img_Flows.login_210d01f8-8ab1-43f2-8ede-fe24f9891c19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220529-180001/videoReport/Video_Mp4_Flows.LoginFacebook_c4174ef8-dbb5-4086-af7d-493dec81c3da.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220529-180001/videoReport/Video_Mp4_Flows.login_a8bf7466-31f3-4679-b510-1384fdd47887.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220530-002928/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220530-002928/imgReport/Img_Flows.LoginFacebook_60b20911-9fd6-4de7-966b-d84072a1b308.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220530-002928/imgReport/Img_Flows.login_b4c9227b-0235-4fca-b358-02db8da1872e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220530-002928/videoReport/Video_Mp4_Flows.LoginFacebook_05c67efa-3e80-4f87-b33e-fd278967332e.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220530-002928/videoReport/Video_Mp4_Flows.login_b8d145e2-0d77-4712-a802-5483aef6bb7d.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220530-063101/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220530-063101/imgReport/Img_Flows.LoginFacebook_bf9cee01-316b-4d3a-935d-950d585d246f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220530-063101/imgReport/Img_Flows.login_f0790d19-5b41-4ccd-9d69-a55381b7cf28.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220530-063101/videoReport/Video_Mp4_Flows.LoginFacebook_4c64f7f4-961c-46ed-83e9-15dc5a9f888d.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220530-063101/videoReport/Video_Mp4_Flows.login_1fdb9638-958e-4e81-8c44-725f1c259ec9.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220530-233928/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220530-233928/imgReport/Img_Flows.LoginFacebook_1cbdd6de-3109-48d0-bfbc-814caf7d2776.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220530-233928/imgReport/Img_Flows.login_b2689400-9302-488b-84e3-9cf31a86f30e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220530-233928/videoReport/Video_Mp4_Flows.LoginFacebook_c1bb610c-50ea-496a-a587-9e26b316e12c.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220530-233928/videoReport/Video_Mp4_Flows.login_088ff7f8-79e5-4ea7-be10-8d492d2ef063.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220611-212814/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220611-212814/imgReport/Img_Flows.LoginFacebook_395cc90b-87a5-4c38-85e3-5a3b66fa1fff.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220611-212814/imgReport/Img_Flows.login_f962008c-0cde-4e3b-9cb5-78a67c675f77.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220611-212814/videoReport/Video_Mp4_Flows.LoginFacebook_c46ecdaf-33e2-44b8-8caf-baf96c27fd84.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220611-212814/videoReport/Video_Mp4_Flows.login_ab0cca4c-335d-48d9-bbbe-2f15495672ea.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220612-001733/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220612-001733/imgReport/Img_Flows.LoginFacebook_82774ce3-7143-43d3-99cc-e0646fb0239c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220612-001733/imgReport/Img_Flows.login_cc8b91d0-d29e-419e-94f4-9fcb2182e9cc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220612-001733/videoReport/Video_Mp4_Flows.LoginFacebook_87c06bf9-00eb-410f-b0d5-ca5adf7cb644.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220612-001733/videoReport/Video_Mp4_Flows.login_f028fbac-51de-41c7-86fe-90afae2c4f28.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220613-225628/Test login in Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220613-225628/imgReport/Img_Flows.LoginFacebook_82c9365a-788e-42aa-bbcf-ae434985189d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220613-225628/imgReport/Img_Flows.login_4b712e8d-afb0-48ef-a9ca-2dcfb984046c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220613-225628/videoReport/Video_Mp4_Flows.LoginFacebook_b98417d4-746a-4e52-ac4f-4a61ebf0201b.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/20220613-225628/videoReport/Video_Mp4_Flows.login_ea152668-5da5-44e8-98d0-387b6d8d2a8b.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Flows/LoginFacebook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Flows/LoginFacebook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/utils/contains.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/contains.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/utils/setup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/setup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/Test login in Admin/Test cho chức năng đăng nhập 1.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/Test login in Admin/Test cho chức năng đăng nhập 1.html" afterDir="false" />
@@ -26,8 +248,18 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -36,18 +268,110 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2BghEqQyn7076yBsPsNrQRI7UyB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/IT/eclipse_WS/learnSpringboot"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "D:/IT/JavaMicroSevices/java_micro/create-api-gate-way",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IT\codeAuto\automationServer\src\main\java\autoServer\Entity" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.viettel.bccs3.agreement.service" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.ConsumerApplication">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="autoServer.Application" />
+      <module name="AutoServer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="autoServer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConsumerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.Consumer.Consumer.ConsumerApplication" />
+      <module name="Consumer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Consumer.Consumer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DemoKafkaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.kafka.DemoKafka.DemoKafkaApplication" />
+      <module name="DemoKafka" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.kafka.DemoKafka.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.kafka.DemoKafka.DemoKafkaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.kafka.DemoKafka.DemoKafkaApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.kafka.DemoKafka.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="D:/IT/eclipse_WS/tester/testcase/loginFacebook.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="tester" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testcase/loginFacebook.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ConsumerApplication" />
+        <item itemvalue="Application.DemoKafkaApplication" />
+        <item itemvalue="Application.com.kafka.DemoKafka.DemoKafkaApplication" />
+        <item itemvalue="Application.Application" />
+        <item itemvalue="TestNG.D:/IT/eclipse_WS/tester/testcase/loginFacebook.xml" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -58,5 +382,46 @@
       <updated>1657333532659</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnloadedModulesList">
+    <module name="AutoServer" />
+    <module name="Consumer" />
+    <module name="DemoKafka" />
+    <module name="agreement-service" />
+    <module name="tester" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalStateException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../../TeraCom/DemoKafka/src/main/java/com/kafka/DemoKafka/KafkaConfig/KafkaConfig.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../../TeraCom/CODE/agreement-service/src/main/java/com/viettel/bccs3/agreement/configuration/datasource/StatusConverter.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="java-exception" />
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

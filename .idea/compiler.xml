@@ -2,12 +2,29 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="tester" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="agreement-service" target="11" />
+      <module name="AutoServer" target="1.8" />
+      <module name="Consumer" target="17" />
+      <module name="DemoKafka" target="17" />
+      <module name="DemoKafka (1)" target="17" />
+      <module name="tester" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="AutoServer" options="-parameters" />
+      <module name="Consumer" options="-parameters" />
+      <module name="DemoKafka" options="-parameters" />
+      <module name="DemoKafka (1)" options="-parameters" />
+      <module name="agreement-service" options="-parameters" />
+    </option>
   </component>
 </project>
