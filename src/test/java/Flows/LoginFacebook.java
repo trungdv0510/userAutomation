@@ -7,6 +7,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import readExcel.dataMap;
 import readExcel.excelFile;
+import utils.UtilsActions;
 import utils.contains;
 import utils.setup;
 
@@ -30,9 +31,10 @@ public class LoginFacebook extends setup{
 			excelFile.setPass(dataMap.login.Result.ordinal(), row, dataMap.login.Error.ordinal());
 		} catch (AssertionError e) {
 			// TODO: handle exception
+			UtilsActions.saveErrorToLog(e.getMessage());
 			excelFile.setFail(dataMap.login.Result.ordinal(), row, dataMap.login.Error.ordinal());
 			testLogs.log(LogStatus.FAIL, Testname+" testcase failed", "");
-			fail();
+			assertTrue(false);
 		}
 	}
 	@DataProvider(name ="login")

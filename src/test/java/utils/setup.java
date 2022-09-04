@@ -119,15 +119,15 @@ public class setup {
 			}
 			extent.endTest(testLogs);
 			extent.flush();
+			// kiểm tra xem có lỗi không để ghi log
+			if (!StringUtils.isBlank(contains.errorLog)) {
+				testLogs.log(LogStatus.FAIL, contains.errorLog.toString(),"");
+			}
 			//insert video and picture to server
 			String pathImgFromServer =  okHttpApi.insertImg(contains.folderReprotLocation+imgPath, contains.url+contains.ApiImg, contains.MEDIA_TYPE_JPG);
 			String pathVideoFromServer = okHttpApi.insertImg(contains.folderReprotLocation+pathVideoMp4, contains.url+contains.ApiVideo, contains.MEDIA_TYPE_VIDEO);
 			testLogs.log(LogStatus.INFO, pathImgFromServer,"image");
 			testLogs.log(LogStatus.INFO, pathVideoFromServer,"video");
-			// kiểm tra xem có lỗi không để ghi log
-			if (!StringUtils.isBlank(contains.errorLog)) {
-				testLogs.log(LogStatus.FAIL, contains.errorLog.toString(),"");
-			}
 			// Lấy thông số của bài test sau khi đã chạy xong
 			InsertToServer.testcase(ctx, result);
 			// lấy thông tin bài log của method

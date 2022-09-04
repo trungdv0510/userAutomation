@@ -46,8 +46,8 @@ public class UtilsActions {
 	}
 	
 	public static void saveErrorToLog(String error) {
-		if (StringUtils.isBlank(contains.errorLog)) {
-			contains.errorLog.append(error);
+		if (contains.errorLog == null){
+			contains.errorLog = new StringBuilder(error);
 		}
 		else {
 			contains.errorLog.append(" /n ").append(error);

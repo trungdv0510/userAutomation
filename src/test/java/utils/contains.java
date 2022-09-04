@@ -31,7 +31,7 @@ public class contains {
 	public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
 	public static final MediaType MEDIA_TYPE_JPG = MediaType.parse("image/jpeg");
 	public static final MediaType MEDIA_TYPE_VIDEO = MediaType.parse("video/mp4");
-	public static StringBuilder errorLog=  new StringBuilder();
+	public static StringBuilder errorLog;
 	// kiểm tra xem có sendtoserver hay ko 
 	public static int sendToServer = 1; // 1 -> send to server
 	
