@@ -7,6 +7,7 @@
 		<parameter name="bareURL" value="https://www.facebook.com/" />
 		<parameter name="chrome" value="chrome" />
 		<parameter name="testname" value="Test login facebook " />
+		<parameter name="sprint" value="1" />
 		<parameter name="exelData" value="Login.xlsx>data>login" />
 		<classes>
 			<class name="Flows.LoginFacebook"></class>
