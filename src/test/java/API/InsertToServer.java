@@ -1,5 +1,6 @@
 package API;
 
+import org.apache.commons.lang3.StringUtils;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import utils.contains;
@@ -17,12 +18,13 @@ public class InsertToServer extends setup{
 	public static HashMap<String, String> testSuiteAPI;
 	public static HashMap<String, String> testCaseAPI;
 	public static HashMap<String, String> testLogAPI;
+	public static HashMap<String,String> regressionApi;
 	public static List<HashMap<String, String>> listTestLog = new ArrayList<>();
 	public static List<HashMap<String, String>> listTestCase = new ArrayList<>();
 
 	public static void testSuite() {
 		try {
-			String suiteUUID = SuiteUUID.toString();
+			String suiteUUID = SuiteUUID;
 			String SuiteName = ctxLocal.getCurrentXmlTest().getSuite().getName();
 			LocalDate date = LocalDate.now();
 			String dateRun = date.toString();
@@ -90,18 +92,23 @@ public class InsertToServer extends setup{
 			}
 		}
 	}
-	public static HashMap<String,String> regressionTest(ITestContext ctx){
+	public static void regressionTest(ITestContext ctx){
+		System.out.println("regressionTest");
 		String uuid = UUID.randomUUID().toString();
 		String testcaseName = ctxLocal.getCurrentXmlTest().getSuite().getName();
 		String author = ctx.getCurrentXmlTest().getParameter("author");
 		String result = contains.pass;
-		String errorDescription =  contains.errorLog.toString();
+		String errorDescription = "";
+		if(contains.errorLog!=null){
+			errorDescription =  contains.errorLog.toString();
+		}
 		String sprint = ctx.getCurrentXmlTest().getParameter("sprint");
-		String evidence = contains.url+contains.ApiTestSuite+SuiteUUID.toString();
+		String evidence = contains.url+contains.ApiTestSuite+SuiteUUID;
+
 		if (totalFail>0) {
 			result = contains.fail;
 		}
-		return MapHashMap.regressionTestMap(uuid,testcaseName,evidence,result,author,errorDescription,sprint);
+		regressionApi =  MapHashMap.regressionTestMap(uuid,testcaseName,evidence,result,author,errorDescription,sprint,SuiteUUID.toString());
 	}
 	public static void insertTestSuite() {
 		if (okHttpApi.insert(testSuiteAPI, contains.url+contains.ApiTestSuite)) {
@@ -110,6 +117,7 @@ public class InsertToServer extends setup{
 		else {
 			System.out.println("Insert testSuite to server fail");
 		}
+		System.out.println("------End insert TestSuite log ----------");
     }
 	public static void insertTestCase() {
 		for (HashMap<String, String> hashMap : listTestCase) {
@@ -119,6 +127,7 @@ public class InsertToServer extends setup{
 				System.out.println("Insert testcase to server fail");
 			}
 		}
+		System.out.println("------End insert TestCase log ----------");
 	}
 	public static void insertTestLog() {
 		for (HashMap<String, String> hashMap : listTestLog) {
@@ -128,14 +137,16 @@ public class InsertToServer extends setup{
 				System.out.println("Insert testLog to server fail");
 			}
 		}
+		System.out.println("------End insert test log ----------");
 	}
-	public static void insertRegression(ITestContext ctx){
-		HashMap<String,String> regressionAPI = regressionTest(ctx);
-		if (okHttpApi.insert(regressionAPI, contains.url+contains.apiRegression)) {
+	public static void insertRegression(){
+		System.out.println(regressionApi);
+		if (okHttpApi.insert(regressionApi, contains.url+contains.apiRegression)) {
 			System.out.println("Insert regression to server success");
 		}
 		else {
 			System.out.println("Insert regression to server fail");
 		}
+		System.out.println("------End insert Regression log ----------");
 	}
 }

@@ -39,8 +39,8 @@ public class setup {
 	public String suiteName;
 	public static String videoName;
 	public static String pathfileIMGSave;
-	public static UUID SuiteUUID;
-	public static UUID TestUUID;
+	public static String SuiteUUID;
+	public static String TestUUID;
 	public static String pathVideoMp4;
 	public static ITestContext ctxLocal;
 	public static ITestResult resultLocal;
@@ -55,7 +55,7 @@ public class setup {
 	public void beforeMethod(ITestContext ctx, Method method, String testname,String chrome) {
 		try {
 			contains.errorLog = null;
-			TestUUID = UUID.randomUUID();
+			TestUUID = randomName.generateValue();
 			System.out.println("TestUUID" + TestUUID);
 			testLogs = extent.startTest(testname + ": " + this.getClass().getName(),
 					"đang test cho method: " + method.getName());
@@ -132,6 +132,7 @@ public class setup {
 			InsertToServer.testcase(ctx, result);
 			// lấy thông tin bài log của method
 			InsertToServer.testLog();
+			InsertToServer.regressionTest(ctx);
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.err.println(e.getMessage());
@@ -203,10 +204,10 @@ public class setup {
 
 	@BeforeSuite
 	public void BeforeSuite(ITestContext itest) {
-		SuiteUUID = UUID.randomUUID();
+		SuiteUUID = randomName.generateValue();
+		System.out.println("SuiteUUID   " + SuiteUUID);
 		suiteName = itest.getCurrentXmlTest().getSuite().getName();
 		extent = null;
-		SuiteUUID = UUID.randomUUID();
 		PropertyConfigurator.configure("log/log4j.properties");
 		extent = ScreenshotAndVideo.Instance(extent, suiteName);
 		extent.loadConfig(new File("reports/report-config.xml"));
@@ -222,7 +223,7 @@ public class setup {
 				InsertToServer.insertTestSuite();
 				InsertToServer.insertTestCase();
 				InsertToServer.insertTestLog();
-				InsertToServer.insertRegression(itest);
+				InsertToServer.insertRegression();
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

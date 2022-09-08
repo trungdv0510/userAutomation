@@ -1,11 +1,14 @@
 package utils;
 
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.UUID;
 
 public class randomName {
 	public static String generateValue () {
-		UUID randomUUID = UUID.randomUUID();
-		return randomUUID.toString();
+		String randomUUID = RandomStringUtils.randomAlphabetic(20);
+		return randomUUID;
 	}
 
 	public static String pathImg (String className) {

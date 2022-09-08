@@ -18,10 +18,11 @@ public class okHttpApi {
 	private static final OkHttpClient client = new OkHttpClient();
 	private static final Gson gson = new Gson();
 
-	public static boolean insert(HashMap<String, String> testSuite, String url) {
+	public static boolean insert(HashMap<String, String> data, String url) {
 		boolean responseCheck = false;
 		try {
-			String jsonTestSuite = gson.toJson(testSuite);
+			String jsonTestSuite = gson.toJson(data);
+			System.out.println(jsonTestSuite);
 			RequestBody body = RequestBody.create(contains.JSON, jsonTestSuite);
 			Request request = new Request.Builder().url(url).post(body).build();
 			Response response = client.newCall(request).execute();

@@ -62,9 +62,10 @@ public class MapHashMap {
 		return testLog;
 	}
 
-	public static HashMap<String,String> regressionTestMap(String uuid, String testcaseName,String evidenceLink, String result, String author, String ErrorDescription, String sprint){
+	public static HashMap<String,String> regressionTestMap(String uuid, String testcaseName,String evidenceLink, String result, String author, String ErrorDescription, String sprint, String testsuiteUuid){
 		HashMap<String,String> regression = new HashMap<>();
 		try {
+			System.out.println("regressionTestMap");
 			regression.put(tableDB.regressionTest.uuid.toString(),uuid);
 			regression.put(tableDB.regressionTest.testcaseName.toString(),testcaseName);
 			regression.put(tableDB.regressionTest.evidenceLink.toString(),evidenceLink);
@@ -72,6 +73,7 @@ public class MapHashMap {
 			regression.put(tableDB.regressionTest.author.toString(),author);
 			regression.put(tableDB.regressionTest.ErrorDescription.toString(),ErrorDescription);
 			regression.put(tableDB.regressionTest.sprint.toString(),sprint);
+			regression.put(tableDB.regressionTest.testsuiteUuid.toString(),testsuiteUuid);
 		}catch (Exception e){
 			System.err.println(e.getMessage());
 		}
