@@ -62,11 +62,9 @@ public class MapHashMap {
 		return testLog;
 	}
 
-	public static HashMap<String,String> regressionTestMap(String uuid, String testcaseName,String evidenceLink, String result, String author, String ErrorDescription, String sprint, String testsuiteUuid){
+	public static HashMap<String,String> regressionTestMap(String testcaseName,String evidenceLink, String result, String author, String ErrorDescription, String sprint, String testsuiteUuid){
 		HashMap<String,String> regression = new HashMap<>();
 		try {
-			System.out.println("regressionTestMap");
-			regression.put(tableDB.regressionTest.uuid.toString(),uuid);
 			regression.put(tableDB.regressionTest.testcaseName.toString(),testcaseName);
 			regression.put(tableDB.regressionTest.evidenceLink.toString(),evidenceLink);
 			regression.put(tableDB.regressionTest.result.toString(),result);

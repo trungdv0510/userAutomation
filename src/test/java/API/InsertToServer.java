@@ -41,6 +41,10 @@ public class InsertToServer extends setup{
 			}
 			testSuiteAPI = MapHashMap.testSuiteMap(suiteUUID, SuiteName, dateRun, runTimes, 
 					testcasePass, testcaseFail, testLogSum, TestcaseIP, TestcaseHostname,result);
+			totalPass = 0;
+			totalFail = 0;
+			testlogSum = 0;
+			runTime = 0;
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println(e.getMessage());
@@ -93,8 +97,6 @@ public class InsertToServer extends setup{
 		}
 	}
 	public static void regressionTest(ITestContext ctx){
-		System.out.println("regressionTest");
-		String uuid = UUID.randomUUID().toString();
 		String testcaseName = ctxLocal.getCurrentXmlTest().getSuite().getName();
 		String author = ctx.getCurrentXmlTest().getParameter("author");
 		String result = contains.pass;
@@ -103,12 +105,12 @@ public class InsertToServer extends setup{
 			errorDescription =  contains.errorLog.toString();
 		}
 		String sprint = ctx.getCurrentXmlTest().getParameter("sprint");
-		String evidence = contains.url+contains.ApiTestSuite+SuiteUUID;
+		String evidence = contains.urlUI+contains.report+SuiteUUID;
 
 		if (totalFail>0) {
 			result = contains.fail;
 		}
-		regressionApi =  MapHashMap.regressionTestMap(uuid,testcaseName,evidence,result,author,errorDescription,sprint,SuiteUUID.toString());
+		regressionApi =  MapHashMap.regressionTestMap(testcaseName,evidence,result,author,errorDescription,sprint,SuiteUUID.toString());
 	}
 	public static void insertTestSuite() {
 		if (okHttpApi.insert(testSuiteAPI, contains.url+contains.ApiTestSuite)) {

@@ -3,5 +3,6 @@
 <suite name="auto test" parallel="none">
 	<suite-files>
 		<suite-file path="./loginFacebook.xml" />
+		<suite-file path="./loginFacebookPass.xml" />
 	</suite-files>
 </suite>

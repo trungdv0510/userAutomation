@@ -18,6 +18,8 @@ public class contains {
 	public static final String folderVideoReport = "videoReport/";
 	// cấu hình url cho insert API
 	public static final String url = "http://localhost:8085/";
+	public static final String urlUI = "http://localhost:8081/";
+	public static final String report = "report/";
 	public static final String ApiTestSuite = "api/testsuite/";
 	public static final String ApiTestCase = "api/testcase/";
 	public static final String ApiTestCases = "api/testcases/";
