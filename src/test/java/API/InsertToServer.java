@@ -73,8 +73,8 @@ public class InsertToServer extends setup{
 				totalPass++;
 			}
 			runTime += convert.convertTimeToInteger(TestcaseDuration);
-			testCaseAPI =MapHashMap.testCaseMap(TestUUID.toString(), TestcaseName, methodName, 
-					TestcaseAuthor, SuiteUUID.toString(), TestcaseStartTime, TestcaseEndTime, 
+			testCaseAPI =MapHashMap.testCaseMap(TestUUID, TestcaseName, methodName,
+					TestcaseAuthor, SuiteUUID, TestcaseStartTime, TestcaseEndTime,
 					TestcaseDuration, TestcaseStatus);
 			listTestCase.add(testCaseAPI);
 		} catch (Exception e) {
@@ -86,7 +86,7 @@ public class InsertToServer extends setup{
 		for (int i = 0; i <  testLogs.getTest().getLogList().size(); i++) {
 			if(!testLogs.getTest().getLogList().get(i).getStepName().contains("<img")) {
 				String uuid = UUID.randomUUID().toString();
-				String testcaseUUID = TestUUID.toString();
+				String testcaseUUID = TestUUID;
 				String stepName = testLogs.getTest().getLogList().get(i).getStepName();
 				String details = testLogs.getTest().getLogList().get(i).getDetails();
 				String TestStepTime =contains.timeDateReport(testLogs.getTest().getLogList().get(i).getTimestamp());
@@ -101,7 +101,7 @@ public class InsertToServer extends setup{
 		String author = ctx.getCurrentXmlTest().getParameter("author");
 		String result = contains.pass;
 		String errorDescription = "";
-		if(contains.errorLog!=null){
+		if(!StringUtils.isBlank(contains.errorLog)){
 			errorDescription =  contains.errorLog.toString();
 		}
 		String sprint = ctx.getCurrentXmlTest().getParameter("sprint");
@@ -110,7 +110,7 @@ public class InsertToServer extends setup{
 		if (totalFail>0) {
 			result = contains.fail;
 		}
-		regressionApi =  MapHashMap.regressionTestMap(testcaseName,evidence,result,author,errorDescription,sprint,SuiteUUID.toString());
+		regressionApi =  MapHashMap.regressionTestMap(testcaseName,evidence,result,author,errorDescription,sprint,SuiteUUID);
 	}
 	public static void insertTestSuite() {
 		if (okHttpApi.insert(testSuiteAPI, contains.url+contains.ApiTestSuite)) {

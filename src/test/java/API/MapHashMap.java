@@ -69,7 +69,7 @@ public class MapHashMap {
 			regression.put(tableDB.regressionTest.evidenceLink.toString(),evidenceLink);
 			regression.put(tableDB.regressionTest.result.toString(),result);
 			regression.put(tableDB.regressionTest.author.toString(),author);
-			regression.put(tableDB.regressionTest.ErrorDescription.toString(),ErrorDescription);
+			regression.put(tableDB.regressionTest.errorDescription.toString(),ErrorDescription);
 			regression.put(tableDB.regressionTest.sprint.toString(),sprint);
 			regression.put(tableDB.regressionTest.testsuiteUuid.toString(),testsuiteUuid);
 		}catch (Exception e){

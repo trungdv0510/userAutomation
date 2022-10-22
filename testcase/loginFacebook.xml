@@ -7,7 +7,20 @@
 		<parameter name="bareURL" value="https://www.facebook.com/" />
 		<parameter name="chrome" value="chrome" />
 		<parameter name="testname" value="Test login facebook with data null" />
-		<parameter name="sprint" value="3" />
+		<parameter name="sprint" value="1" />
+		<parameter name="exelData" value="Login.xlsx>data>login" />
+		<classes>
+			<class name="Flows.LoginFacebook"></class>
+		</classes>
+	</test>
+
+	<test thread-count="5" name="Test cho cho chức năng login facebook">
+		<parameter name="type" value="web" />
+		<parameter name="author" value="Trung dv" />
+		<parameter name="bareURL" value="https://www.facebook.com/" />
+		<parameter name="chrome" value="chrome" />
+		<parameter name="testname" value="Test login facebook test 2" />
+		<parameter name="sprint" value="1" />
 		<parameter name="exelData" value="Login.xlsx>data>login" />
 		<classes>
 			<class name="Flows.LoginFacebook"></class>
