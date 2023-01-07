@@ -12,11 +12,11 @@ import java.util.List;
 import java.util.Set;
 
 public class EventInPage {
-	public static boolean clickButton(WebDriver driver, By elementFindBy) {
+	public  boolean clickButton(WebDriver driver, By elementFindBy) {
 		boolean click = false;
 		try {
 			WebElement btnClick = driver.findElement(elementFindBy);
-			if (!btnClick.isDisplayed()) {
+			if (btnClick.isDisplayed()) {
 				btnClick.click();
 				click = true;
 			}
@@ -28,7 +28,7 @@ public class EventInPage {
 		return click;
 	}
 
-	public static boolean inputTextField(WebDriver driver, By elementFindBy, String valueInput) {
+	public  boolean inputTextField(WebDriver driver, By elementFindBy, String valueInput) {
 		boolean input = false;
 		try {
 			WebElement textField = driver.findElement(elementFindBy);
@@ -46,7 +46,7 @@ public class EventInPage {
 		return input;
 	}
 
-	public static boolean selectComboboxByValue(WebDriver driver, By elementFindBy, String valueSelect) {
+	public  boolean selectComboboxByValue(WebDriver driver, By elementFindBy, String valueSelect) {
 		boolean check = false;
 		try {
 			WebElement combobox = driver.findElement(elementFindBy);
@@ -61,7 +61,7 @@ public class EventInPage {
 		return check;
 	}
 
-	public static boolean selectComboboxByIndex(WebDriver driver, By elementFindBy, int valueIndex) {
+	public  boolean selectComboboxByIndex(WebDriver driver, By elementFindBy, int valueIndex) {
 		boolean check = false;
 		try {
 			WebElement combobox = driver.findElement(elementFindBy);
@@ -76,7 +76,7 @@ public class EventInPage {
 		return check;
 	}
 
-	public static boolean selectComboboxByVisibleText(WebDriver driver, By elementFindBy, String visibleText) {
+	public  boolean selectComboboxByVisibleText(WebDriver driver, By elementFindBy, String visibleText) {
 		boolean check = false;
 		try {
 			WebElement combobox = driver.findElement(elementFindBy);
@@ -91,7 +91,7 @@ public class EventInPage {
 		return check;
 	}
 
-	public static boolean checkElementInPage(WebDriver driver, By elementFindBy) {
+	public boolean checkElementInPage(WebDriver driver, By elementFindBy) {
 		boolean check = false;
 		try {
 			boolean element = driver.findElements(elementFindBy).size()>0;
@@ -105,7 +105,7 @@ public class EventInPage {
 		}
 		return check;
 	}
-	public static List<String> getAllOptionValueInSelectComboBox(WebDriver driver, By elementFindBy) {
+	public List<String> getAllOptionValueInSelectComboBox(WebDriver driver, By elementFindBy) {
 		List<String> allOption = new ArrayList<>();
 		try {
 			WebElement combobox = driver.findElement(elementFindBy);
@@ -120,7 +120,7 @@ public class EventInPage {
 		}
 		return allOption;
 	} 
-	public static boolean switchWindowHasString(WebDriver driver, String stringInWindow) {
+	public boolean switchWindowHasString(WebDriver driver, String stringInWindow) {
 		boolean result = false;
 		try {
 			Set<String> lstWindow = driver.getWindowHandles();

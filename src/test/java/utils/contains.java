@@ -6,6 +6,13 @@ import java.util.Date;
 import okhttp3.MediaType;
 
 public class contains {
+	public static final String deviceName = "deviceName";
+	public static final String udid = "udid";
+	public static final String platformName = "platformName";
+	public static final String platformVersion = "platformVersion";
+	public static final String appPackage = "appPackage";
+	public static final String appActivity = "appActivity";
+
 	public static final String dataFolder = "data/";
 	public static String fileExcelName = "";
 	public static String sheetName = "";
@@ -15,10 +22,11 @@ public class contains {
 	public static final int TIME_WAITING = 30;
 	public static  String folderReprotLocation = "reports/" + getCurrentDateTime("yyyyMMdd-HHmmss") + "/";
 	public static final String folderImgReport = "imgReport/";
+	public static final String folderSeleniumIde = "selenium_ide/";
 	public static final String folderVideoReport = "videoReport/";
 	// cấu hình url cho insert API
-	public static final String url = "http://localhost:8085/";
-	public static final String urlUI = "http://localhost:8081/";
+	public static final String url = "http://192.168.0.104:8085/";
+	public static final String urlUI = "http://192.168.0.104:8087/";
 	public static final String report = "report/";
 	public static final String ApiTestSuite = "api/testsuite/";
 	public static final String ApiTestCase = "api/testcase/";
@@ -35,7 +43,7 @@ public class contains {
 	public static final MediaType MEDIA_TYPE_VIDEO = MediaType.parse("video/mp4");
 	public static StringBuilder errorLog;
 	// kiểm tra xem có sendtoserver hay ko 
-	public static int sendToServer = 1; // 1 -> send to server
+	public static int sendToServer = 0; // 1 -> send to server
 	
 	// Current time
 	public static String getCurrentDateTime(String format) {

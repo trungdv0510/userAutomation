@@ -2,6 +2,8 @@ package utils;
 
 import API.InsertToServer;
 import API.okHttpApi;
+import SeleniumIDE.ActionEvent.ConvertFileToJson;
+import SeleniumIDE.SeleniumObject.TestCase;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -44,6 +46,7 @@ public class setup {
 	public static String pathVideoMp4;
 	public static ITestContext ctxLocal;
 	public static ITestResult resultLocal;
+	public static TestCase testCase;
 	public static int totalPass = 0, totalFail = 0, testlogSum = 0, runTime = 0;
 	/*
 	 * Method -> lấy tên các method run trong class
@@ -139,9 +142,9 @@ public class setup {
 		}
 	}
 
-	@Parameters({ "type", "bareURL", "chrome" })
+	@Parameters({ "type", "bareURL", "chrome" ,"ide","fileName"})
 	@BeforeTest
-	public void beforeTest(ITestContext ctx, String type, String bareURL, String chrome) {
+	public void beforeTest(ITestContext ctx, String type, String bareURL, String chrome, String ide,String fileName) {
 		System.err.println("BeforeTest");
 		try {
 			if (type.contains("web")) {
@@ -161,16 +164,21 @@ public class setup {
 				}
 				driver.manage().window().maximize();
 				driver.manage().timeouts().implicitlyWait(contains.TIME_WAITING, TimeUnit.SECONDS);
-				driver.get(bareURL);
+				if (ide.equalsIgnoreCase("SELENIUM IDE")){
+					testCase = new ConvertFileToJson().convertFileDataToObject(fileName);
+					driver.get(testCase.getUrl());
+				}else{
+					driver.get(bareURL);
+				}
 
 			} else if (type.contains("app")) {
 				// lấy những thông tin khi chạy 
-				String deviceName =  ctx.getCurrentXmlTest().getParameter("deviceName");
-				String udid =  ctx.getCurrentXmlTest().getParameter("udid");
-				String platformName =  ctx.getCurrentXmlTest().getParameter("platformName");
-				String platformVersion =  ctx.getCurrentXmlTest().getParameter("platformVersion");
-				String appPackage =  ctx.getCurrentXmlTest().getParameter("appPackage");
-				String appActivity =  ctx.getCurrentXmlTest().getParameter("appActivity");
+				String deviceName =  ctx.getCurrentXmlTest().getParameter(contains.deviceName);
+				String udid =  ctx.getCurrentXmlTest().getParameter(contains.udid);
+				String platformName =  ctx.getCurrentXmlTest().getParameter(contains.platformName);
+				String platformVersion =  ctx.getCurrentXmlTest().getParameter(contains.platformVersion);
+				String appPackage =  ctx.getCurrentXmlTest().getParameter(contains.appPackage);
+				String appActivity =  ctx.getCurrentXmlTest().getParameter(contains.appActivity);
 				URL url = new URL("http://127.0.0.1:4723/wd/hub");
 				appiumDriver = new AppiumDriver<>(url, configAppCapabilities(deviceName, udid,
 						platformName, platformVersion, appPackage, appActivity));
